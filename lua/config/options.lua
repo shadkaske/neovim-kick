@@ -1,13 +1,12 @@
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.opt.hlsearch = false
 
 -- Make line numbers default
-vim.wo.number = true
-
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+vim.opt.mouse = 'a'
 
 -- No Wrap
 vim.opt.wrap = false
@@ -16,6 +15,10 @@ vim.opt.wrap = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamed'
+
+-- Split options
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 -- Enable break indent
 vim.o.breakindent = true
