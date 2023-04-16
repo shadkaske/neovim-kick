@@ -50,6 +50,7 @@ wk.register(
     b = { name = string.format("%s Buffers", icons.Buffers) },
     f = { name = string.format("%s Find", icons.Search) },
     g = { name = string.format("%s Git", icons.Git) },
+    l = { name = string.format("%s LSP", icons.LSP) },
     s = { name = string.format("%s Session", icons.Session) },
     y = { name = string.format("%s Clipboard", icons.Paste) },
   },
