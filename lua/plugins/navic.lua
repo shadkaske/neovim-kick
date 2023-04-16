@@ -13,7 +13,8 @@ return {
     return {
       separator = string.format(" %s ", icons.DoubleChevronRight),
       highlight = true,
-      depth_limit = 5,
+      depth_limit = 4,
+      depth_limit_indicator = icons.Ellipsis,
       icons = icons.kinds,
     }
   end
