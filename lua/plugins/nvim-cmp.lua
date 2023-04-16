@@ -10,6 +10,37 @@ return {
         "rafamadriz/friendly-snippets",
       },
     },
+    {
+      "onsails/lspkind.nvim",
+      opts = function()
+        local icons = require("util.icons")
+        return {
+          mode = "symbol",
+          symbol_map = {
+            Array = icons.Array,
+            Boolean = icons.Boolean,
+            Class = icons.Class,
+            Constructor = icons.Constructor,
+            Key = icons.Key,
+            Namespace = icons.Namespace,
+            Null = icons.Null,
+            Number = icons.Number,
+            Object = icons.Object,
+            Package = icons.Package,
+            Property = icons.Property,
+            Reference = icons.Reference,
+            Snippet = icons.Snippet,
+            String = icons.String,
+            TypeParameter = icons.TypeParameter,
+            Unit = icons.Unit,
+          },
+        }
+      end,
+      enabled = vim.g.icons_enabled,
+      config = function(_, opts)
+        require("lspkind").init(opts)
+      end
+    },
     'saadparwaiz1/cmp_luasnip'
   },
   opts = function()
@@ -19,12 +50,23 @@ return {
     luasnip.config.setup {}
 
     require("luasnip.loaders.from_vscode").lazy_load()
+    local lspkind = require("lspkind")
 
     cmp.setup {
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
+      },
+      formatting = {
+        format = lspkind.cmp_format({
+          mode = 'symbol',
+          maxwidth = 50,
+          ellipsis_char = '...',
+          before = function (entry, vim_item)
+            return vim_item
+          end
+        })
       },
       mapping = cmp.mapping.preset.insert {
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
