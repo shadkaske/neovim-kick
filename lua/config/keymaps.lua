@@ -59,7 +59,7 @@ wk.register(
     f = { name = string.format("%s Find", icons.Search) },
     g = { name = string.format("%s Git", icons.Git) },
     l = { name = string.format("%s LSP", icons.LSP) },
-    p = { name = string.format("%s Plugins", icons.Package) },
+    p = { name = string.format("%s Plugins", icons.kinds.Package) },
     s = { name = string.format("%s Session", icons.Session) },
     y = { name = string.format("%s Clipboard", icons.Paste) },
   },
