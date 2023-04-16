@@ -51,6 +51,7 @@ return {
   Debugger = "",
   Session = "󱂬",
   Terminal = "",
+  DoubleChevronRight = "󰄾",
  kinds = {
     Array = " ",
     Boolean = " ",
@@ -87,5 +88,10 @@ return {
     Unit = " ",
     Value = " ",
     Variable = " ",
+  },
+  git = {
+    added = " ",
+    modified = " ",
+    removed = " ",
   },
 }
