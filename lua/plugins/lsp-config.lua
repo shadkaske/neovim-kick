@@ -42,6 +42,12 @@ return {
       eslint = {},
       html = {},
       jsonls = {},
+      lua_ls = {
+        Lua = {
+          workspace = { checkThirdParty = false },
+          telemetry = { enable = false },
+        },
+      },
       marksman = {},
       intelephense = {},
       pyright = {},
