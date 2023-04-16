@@ -4,16 +4,20 @@ return {
   name = "catppuccin",
   opts = {
     integrations = {
-      cmp = true,
       bufferline = true,
+      cmp = true,
       fidget = true,
+      gitsigns = true,
+      indent_blankline = {
+        enabled = true,
+        colored_indent_levels = false,
+      },
+      leap = true,
+      mini = true,
+      neotree = true,
+      noice = true,
       telescope = true,
       treesitter = true,
-      noice = true,
-      neotree = true,
-      mini = true,
-      leap = true,
-      gitsigns = true,
     },
   }
 }
