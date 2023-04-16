@@ -10,7 +10,7 @@ return {
       telescope = true,
       treesitter = true,
       noice = true,
-      neotree = false,
+      neotree = true,
       mini = true,
       leap = true,
       gitsigns = true,
