@@ -12,5 +12,12 @@ return {
       component_separators = { left = '', right = '' },
       section_separators = { left = '', right = '' },
     },
+    extensions = {
+      'fugitive',
+      'neo-tree',
+      'lazy',
+      'nvim-dap-ui',
+      'quickfix',
+    }
   },
 }
