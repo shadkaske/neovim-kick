@@ -14,6 +14,9 @@ return {
       },
       leap = true,
       mini = true,
+      navic = {
+        enabled = true,
+      },
       neotree = true,
       noice = true,
       telescope = true,
@@ -21,11 +24,3 @@ return {
     },
   }
 }
-
--- { -- Theme inspired by Atom
---   "navarasu/onedark.nvim",
---   priority = 1000,
---   config = function()
---     vim.cmd.colorscheme "onedark"
---   end,
--- },
