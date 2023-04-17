@@ -11,7 +11,7 @@ return {
   opts = function ()
     local icons = require "util.icons"
     return {
-      separator = string.format(" %s ", icons.DoubleChevronRight),
+      separator = string.format(" %s  ", icons.DoubleChevronRight),
       highlight = true,
       depth_limit = 4,
       depth_limit_indicator = icons.Ellipsis,
