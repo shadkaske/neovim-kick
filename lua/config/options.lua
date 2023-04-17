@@ -7,6 +7,7 @@ vim.opt.relativenumber = true
 
 -- Enable mouse mode
 vim.opt.mouse = 'a'
+vim.opt.mousemoveevent = true
 
 -- No Wrap
 vim.opt.wrap = false

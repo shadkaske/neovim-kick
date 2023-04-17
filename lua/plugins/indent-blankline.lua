@@ -5,7 +5,8 @@ return {
   -- See `:help indent_blankline.txt`
   opts = {
     char = '┊',
-    context_char = "┆",
+    context_char = "┊",
+    context_highlight_list = { 'CmpItemAbbrMatchDefault' },
     use_treesitter = true,
     show_current_context = true,
     show_trailing_blankline_indent = false,

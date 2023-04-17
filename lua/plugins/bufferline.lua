@@ -9,6 +9,10 @@ return {
     require("bufferline").setup {
       highlights = require("catppuccin.groups.integrations.bufferline").get(),
       options = {
+        themable = true,
+        diagnostics = false,
+        show_buffer_close_icons = false,
+        separator_style = "slant",
         offsets = {
           {
             filetype = "neo-tree",
@@ -16,7 +20,18 @@ return {
             text_align = "left",
             separator = true,
           },
-        }
+          {
+            filetype = "dapui_scopes",
+            text = "Debug",
+            text_align = "left",
+            separator = true,
+          },
+        },
+        hover = {
+          enabled = true,
+          delay = 200,
+          reveal = {"close"},
+        },
       }
     }
   end
