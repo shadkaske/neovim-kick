@@ -57,6 +57,9 @@ return {
       },
     }
 
+    vim.fn.sign_define("DapBreakpoint", { text = "󰯯", texthl = "ErrorMsg", linehl = "", numhl = "" })
+    vim.fn.sign_define("DapBreakpointCondition", { text = "󰯲", texthl = "WarningMsg", linehl = "", numhl = "" })
+
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
     dapui.setup {
