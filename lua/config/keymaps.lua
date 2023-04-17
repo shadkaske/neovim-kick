@@ -22,11 +22,18 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
--- Resize buffers
-vim.keymap.set("n", "<C-Up>", "<cmd>resize -2<CR>", { desc = "Resize split up" })
-vim.keymap.set("n", "<C-Down>", "<cmd>resize +2<CR>", { desc = "Resize split down" })
-vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Resize split left" })
-vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Resize split right" })
+-- resizing splits
+-- these keymaps will also accept a range,
+-- for example `10<A-h>` will `resize_left` by `(10 * config.default_amount)`
+vim.keymap.set('n', '<A-h>', require('smart-splits').resize_left)
+vim.keymap.set('n', '<A-j>', require('smart-splits').resize_down)
+vim.keymap.set('n', '<A-k>', require('smart-splits').resize_up)
+vim.keymap.set('n', '<A-l>', require('smart-splits').resize_right)
+-- moving between splits
+vim.keymap.set('n', '<C-h>', require('smart-splits').move_cursor_left)
+vim.keymap.set('n', '<C-j>', require('smart-splits').move_cursor_down)
+vim.keymap.set('n', '<C-k>', require('smart-splits').move_cursor_up)
+vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
 
 -- Center view on jumps
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -93,12 +100,13 @@ wk.register(
 
 -- f Prefix Find Keymaps
 vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Buffers" })
-vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Files" })
-vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "Help" })
-vim.keymap.set("n", "<leader>fw", require("telescope.builtin").grep_string, { desc = "Current Word" })
-vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>fd", require("telescope.builtin").diagnostics, { desc = "Diagnostics" })
+vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Files" })
+vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Live Grep" })
+vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "Help" })
+vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps", { desc = "Keymaps" })
 vim.keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles, { desc = "Recent Files" })
+vim.keymap.set("n", "<leader>fw", require("telescope.builtin").grep_string, { desc = "Current Word" })
 vim.keymap.set("n", "<leader>fi", function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown {
