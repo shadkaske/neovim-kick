@@ -22,6 +22,9 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
+-- Window close shortcut
+vim.keymap.set("n", "<leader>q", "<C-w>q", { desc = "Close Window" })
+
 -- resizing splits
 -- these keymaps will also accept a range,
 -- for example `10<A-h>` will `resize_left` by `(10 * config.default_amount)`
@@ -51,9 +54,13 @@ vim.keymap.set("n", "]o", "o<ESC>")
 
 -- Append semi colon
 vim.keymap.set("n", ";;", "A;<ESC>")
+vim.keymap.set("i", 'jk', "<C-o>A;")
 
 -- Toggle NeoTree
 vim.keymap.set({ "n", "v" }, "<leader>e", "<cmd>NeoTreeFocusToggle<cr>", { desc = "NeoTree Toggle" })
+
+-- I really want my C-p back
+vim.keymap.set("n", "<C-p>", require("telescope.builtin").find_files, { desc = "File Finder" })
 
 -- Lsp Keymaps
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
@@ -134,6 +141,7 @@ vim.keymap.set({ "n" }, "<leader>C", "<cmd>Bdelete!<cr>", { desc = "Force Close 
 vim.keymap.set({ "n" }, "<leader>c", "<cmd>Bdelete!<cr>", { desc = "Close Buffer" })
 vim.keymap.set({ "n" }, "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev Buffer" })
 vim.keymap.set({ "n" }, "L", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
+vim.keymap.set("n", "<leader>ba", "<cmd>bufdo bd<cr>", { desc = "Close All Buffers" })
 
 -- g prefix ( git stuff )
 vim.keymap.set("n", "<leader>gC", "<cmd>Telescope git_bcommits<cr>", { desc = "Checkout commit(for current file)" })
