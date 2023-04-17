@@ -1,6 +1,9 @@
 -- Set highlight on search
 vim.opt.hlsearch = false
 
+-- Set Scrolloff
+vim.opt.scrolloff = 4
+
 -- Make line numbers default
 vim.opt.number = true
 vim.opt.relativenumber = true
