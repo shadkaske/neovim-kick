@@ -17,3 +17,9 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
   pattern = { ".env" },
   command = [[lua vim.diagnostic.disable()]],
 })
+
+-- Set Btxml Files to xml filetype
+vim.api.nvim_create_autocmd(
+  { "BufWritePre", "BufNewFile" },
+  { pattern = { "*.btxml" }, command = [[set filetype=xml]],
+})
