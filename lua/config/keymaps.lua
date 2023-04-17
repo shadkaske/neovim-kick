@@ -4,8 +4,15 @@ local util = require("util")
 -- Don't Override Leader
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
+-- Insert Mode Shortcuts
+vim.keymap.set("i", "<C-e>", "<C-o>$", { silent = true })
+vim.keymap.set("i", "<A-;>", "<C-o>A;", { silent = true })
+
 -- Save buffer with C-s
 vim.keymap.set({ "n", "i" }, "<C-s>", ":w<cr>", { silent = true })
+
+-- Turn off search highlight
+vim.keymap.set("n", "<leader>.", "<cmd>nohlsearch<cr>", { desc = "No Highlight Search" })
 
 -- Remap for dealing with word wrap
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -38,6 +45,20 @@ vim.keymap.set({ "n", "v" }, "<leader>e", "<cmd>NeoTreeFocusToggle<cr>", { desc 
 -- Lsp Keymaps
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
 vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
+vim.keymap.set("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Action" })
+vim.keymap.set("n", "<leader>ld", "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", { desc = "Buffer Diagnostics" })
+vim.keymap.set("n", "<leader>lw", "<cmd>Telescope diagnostics<cr>", { desc = "Diagnostics" })
+vim.keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Format" })
+vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { desc = "Info" })
+vim.keymap.set("n", "<leader>lI", "<cmd>Mason<cr>", { desc = "Mason Info" })
+vim.keymap.set("n", "<leader>ln", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next Diagnostic" })
+vim.keymap.set("n", "<leader>lp", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Prev Diagnostic" })
+vim.keymap.set("n", "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", { desc = "CodeLens Action" })
+vim.keymap.set("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", { desc = "Quickfix" })
+vim.keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename" })
+vim.keymap.set("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Document Symbols" })
+vim.keymap.set("n", "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Workspace Symbols" })
+vim.keymap.set("n", "<leader>le", "<cmd>Telescope quickfix<cr>", { desc = "Telescope Quickfix" })
 
 -- Navigator Keymaps
 vim.keymap.set({ 'n', 't' }, '<C-h>', '<CMD>NavigatorLeft<CR>')
@@ -62,6 +83,7 @@ wk.register(
     p = { name = string.format("%s Plugins", icons.kinds.Package) },
     s = { name = string.format("%s Session", icons.Session) },
     t = { name = string.format("%s Trouble", icons.Diagnostic) },
+    u = { name = string.format("%s UI", icons.UI) },
     y = { name = string.format("%s Clipboard", icons.Paste) },
   },
   {
@@ -113,8 +135,17 @@ vim.keymap.set("n", "<leader>gp", "<cmd>lua require('gitsigns').prev_hunk({navig
   { desc = "Previous Hunk" })
 vim.keymap.set("n", "<leader>gb", require("telescope.builtin").git_branches, { desc = "Checkout Branch" })
 vim.keymap.set("n", "<leader>gs", "<cmd>G<cr>", { desc = "Status" })
+vim.keymap.set("n", "<leader>gP", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", { desc = "Preview Hunk" })
+vim.keymap.set("n", "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", { desc = "Reset Hunk" })
+vim.keymap.set("n", "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", { desc = "Reset Buffer" })
+vim.keymap.set("n", "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", { desc = "Stage Hunk" })
+vim.keymap.set("n", "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", { desc = "Undo Stage Hunk" })
+vim.keymap.set("n", "<leader>go", "<cmd>Telescope git_status<cr>", { desc = "Open changed file" })
+vim.keymap.set("n", "<leader>gC", "<cmd>Telescope git_bcommits<cr>", { desc = "Checkout commit(for current file)" })
+vim.keymap.set("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", { desc = "Git Diff" })
+vim.keymap.set("n", "<leader>gg", "<cmd>G<cr>", { desc = "Fugitive Status" })
 
--- l prefix ( Lsp Stuff )
+-- d prefix ( Debug Stuff )
 if util.plugin_loaded("nvim-dap") then
   wk.register({ d = { name = string.format("%s Debug", icons.Debugger) } })
   vim.keymap.set("n", "<F5>", function() require("dap").continue() end, { desc = "Debugger: Start" })
@@ -149,3 +180,13 @@ vim.keymap.set("n", "<leader>ps", function() require("lazy").home() end, { desc 
 vim.keymap.set("n", "<leader>pS", function() require("lazy").sync() end, { desc = "Plugins Sync" })
 vim.keymap.set("n", "<leader>pu", function() require("lazy").check() end, { desc = "Plugins Check Updates" })
 vim.keymap.set("n", "<leader>pU", function() require("lazy").update() end, { desc = "Plugins Update" })
+
+-- u prefix ( ui toggles )
+vim.keymap.set(
+  "n",
+  "<leader>uh",
+  [[ (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n" <BAR> redraw<CR>]],
+  { desc = "Toggle Highlight Search", silent = true, expr = true }
+)
+vim.keymap.set("n", "<leader>ut", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
+
