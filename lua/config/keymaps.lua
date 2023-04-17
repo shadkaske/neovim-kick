@@ -77,6 +77,7 @@ local icons = require("util.icons")
 wk.register(
   {
     b = { name = string.format("%s Buffers", icons.Buffers) },
+    d = { name = string.format("%s Debug", icons.Debugger) },
     f = { name = string.format("%s Find", icons.Search) },
     g = { name = string.format("%s Git", icons.Git) },
     l = { name = string.format("%s LSP", icons.LSP) },
@@ -147,7 +148,6 @@ vim.keymap.set("n", "<leader>gg", "<cmd>G<cr>", { desc = "Fugitive Status" })
 
 -- d prefix ( Debug Stuff )
 if util.plugin_loaded("nvim-dap") then
-  wk.register({ d = { name = string.format("%s Debug", icons.Debugger) } })
   vim.keymap.set("n", "<F5>", function() require("dap").continue() end, { desc = "Debugger: Start" })
   vim.keymap.set("n", "<F17>", function() require("dap").terminate() end, { desc = "Debugger: Stop" })
   vim.keymap.set("n", "<F29>", function() require("dap").restart_frame() end, { desc = "Debugger: Restart" })
