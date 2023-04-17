@@ -21,6 +21,7 @@ return {
       noice = true,
       telescope = true,
       treesitter = true,
+      lsp_trouble = true,
     },
   }
 }
