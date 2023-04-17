@@ -61,6 +61,7 @@ wk.register(
     l = { name = string.format("%s LSP", icons.LSP) },
     p = { name = string.format("%s Plugins", icons.kinds.Package) },
     s = { name = string.format("%s Session", icons.Session) },
+    t = { name = string.format("%s Trouble", icons.Diagnostic) },
     y = { name = string.format("%s Clipboard", icons.Paste) },
   },
   {
