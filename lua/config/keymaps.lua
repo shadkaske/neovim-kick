@@ -136,21 +136,20 @@ vim.keymap.set({ "n" }, "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev Buff
 vim.keymap.set({ "n" }, "L", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
 
 -- g prefix ( git stuff )
-vim.keymap.set("n", "<leader>gn", "<cmd>lua require('gitsigns').next_hunk({navigation_message=false})<cr>",
-  { desc = "Next Hunk" })
-vim.keymap.set("n", "<leader>gp", "<cmd>lua require('gitsigns').prev_hunk({navigation_message=false})<cr>",
-  { desc = "Previous Hunk" })
-vim.keymap.set("n", "<leader>gb", require("telescope.builtin").git_branches, { desc = "Checkout Branch" })
-vim.keymap.set("n", "<leader>gs", "<cmd>G<cr>", { desc = "Status" })
-vim.keymap.set("n", "<leader>gP", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", { desc = "Preview Hunk" })
-vim.keymap.set("n", "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", { desc = "Reset Hunk" })
-vim.keymap.set("n", "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", { desc = "Reset Buffer" })
-vim.keymap.set("n", "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", { desc = "Stage Hunk" })
-vim.keymap.set("n", "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", { desc = "Undo Stage Hunk" })
-vim.keymap.set("n", "<leader>go", "<cmd>Telescope git_status<cr>", { desc = "Open changed file" })
 vim.keymap.set("n", "<leader>gC", "<cmd>Telescope git_bcommits<cr>", { desc = "Checkout commit(for current file)" })
+vim.keymap.set("n", "<leader>gc", "<cmd>G commit<cr>", { desc = "Git Commit" })
+vim.keymap.set("n", "<leader>gP", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", { desc = "Preview Hunk" })
+vim.keymap.set("n", "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", { desc = "Reset Buffer" })
+vim.keymap.set("n", "<leader>gb", require("telescope.builtin").git_branches, { desc = "Checkout Branch" })
 vim.keymap.set("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", { desc = "Git Diff" })
 vim.keymap.set("n", "<leader>gg", "<cmd>G<cr>", { desc = "Fugitive Status" })
+vim.keymap.set("n", "<leader>gn", "<cmd>lua require('gitsigns').next_hunk({navigation_message=false})<cr>", { desc = "Next Hunk" })
+vim.keymap.set("n", "<leader>go", "<cmd>Telescope git_status<cr>", { desc = "Open changed file" })
+vim.keymap.set("n", "<leader>gp", "<cmd>lua require('gitsigns').prev_hunk({navigation_message=false})<cr>", { desc = "Previous Hunk" })
+vim.keymap.set("n", "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", { desc = "Reset Hunk" })
+vim.keymap.set("n", "<leader>gs", "<cmd>G<cr>", { desc = "Status" })
+vim.keymap.set("n", "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", { desc = "Stage Hunk" })
+vim.keymap.set("n", "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", { desc = "Undo Stage Hunk" })
 
 -- d prefix ( Debug Stuff )
 if util.plugin_loaded("nvim-dap") then
