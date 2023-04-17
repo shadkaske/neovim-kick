@@ -104,7 +104,7 @@ vim.keymap.set("n", "<leader>fd", require("telescope.builtin").diagnostics, { de
 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Files" })
 vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "Help" })
-vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps", { desc = "Keymaps" })
+vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Keymaps" })
 vim.keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles, { desc = "Recent Files" })
 vim.keymap.set("n", "<leader>fw", require("telescope.builtin").grep_string, { desc = "Current Word" })
 vim.keymap.set("n", "<leader>fi", function()
