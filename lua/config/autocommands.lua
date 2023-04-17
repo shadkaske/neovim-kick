@@ -11,3 +11,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Automagically Trim Whitespace
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*" }, command = [[%s/\s\+$//e]] })
+
+-- Turn of diagnostics for .env files
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { ".env" },
+  command = [[lua vim.diagnostic.disable()]],
+})
