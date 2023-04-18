@@ -95,7 +95,7 @@ wk.register(
     l = { name = string.format("%s LSP", icons.LSP) },
     p = { name = string.format("%s Plugins", icons.kinds.Package) },
     s = { name = string.format("%s Session", icons.Session) },
-    t = { name = string.format("%s Trouble", icons.Diagnostic) },
+    t = { name = string.format("%s Terminal", icons.Terminal) },
     u = { name = string.format("%s UI", icons.UI) },
     y = { name = string.format("%s Clipboard", icons.Paste) },
   },
@@ -188,11 +188,12 @@ if util.plugin_loaded("nvim-dap") then
 end
 
 -- p prefix (plugin manager)
+vim.keymap.set("n", "<leader>pS", function() require("lazy").sync() end, { desc = "Plugins Sync" })
+vim.keymap.set("n", "<leader>pU", function() require("lazy").update() end, { desc = "Plugins Update" })
+vim.keymap.set("n", "<leader>pc", function() require("lazy").clean() end, { desc = "Plugins Clean" })
 vim.keymap.set("n", "<leader>pi", function() require("lazy").install() end, { desc = "Plugins Install" })
 vim.keymap.set("n", "<leader>ps", function() require("lazy").home() end, { desc = "Plugins Status" })
-vim.keymap.set("n", "<leader>pS", function() require("lazy").sync() end, { desc = "Plugins Sync" })
 vim.keymap.set("n", "<leader>pu", function() require("lazy").check() end, { desc = "Plugins Check Updates" })
-vim.keymap.set("n", "<leader>pU", function() require("lazy").update() end, { desc = "Plugins Update" })
 
 -- u prefix ( ui toggles )
 vim.keymap.set(
