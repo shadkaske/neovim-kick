@@ -122,6 +122,10 @@ vim.keymap.set("n", "<leader>fi", function()
   })
 end, { desc = "In Current Buffer" })
 
+-- t prefix ( terminal )
+vim.keymap.set("n", "<leader>ta", function () require("util").toggle_tinker() end, { desc = "Tinker" })
+vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { desc = "Terminal" })
+
 -- y Prefix
 vim.keymap.set({ "n", "v" }, "<leader>yo", '"_dP', { desc = "Paste Over" })
 vim.keymap.set({ "n", "v" }, "<leader>yp", '"+p', { desc = "Paste System" })
@@ -151,6 +155,7 @@ vim.keymap.set("n", "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr
 vim.keymap.set("n", "<leader>gb", require("telescope.builtin").git_branches, { desc = "Checkout Branch" })
 vim.keymap.set("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", { desc = "Git Diff" })
 vim.keymap.set("n", "<leader>gg", "<cmd>G<cr>", { desc = "Fugitive Status" })
+vim.keymap.set("n", "<leader>gl", function () require("util").toggle_lazygit() end, { desc = "LazyGit" })
 vim.keymap.set("n", "<leader>gn", "<cmd>lua require('gitsigns').next_hunk({navigation_message=false})<cr>", { desc = "Next Hunk" })
 vim.keymap.set("n", "<leader>go", "<cmd>Telescope git_status<cr>", { desc = "Open changed file" })
 vim.keymap.set("n", "<leader>gp", "<cmd>lua require('gitsigns').prev_hunk({navigation_message=false})<cr>", { desc = "Previous Hunk" })
