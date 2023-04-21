@@ -9,7 +9,8 @@ vim.keymap.set("i", "<C-e>", "<C-o>$", { silent = true })
 vim.keymap.set("i", "<A-;>", "<C-o>A;", { silent = true })
 
 -- Save buffer with C-s
-vim.keymap.set({ "n", "i" }, "<C-s>", ":w<cr>", { silent = true })
+vim.keymap.set("n", "<C-s>", ":w<cr>", { silent = true })
+vim.keymap.set("i", "<C-s>", "<ESC>:w<cr>", { silent = true })
 
 -- Turn off search highlight
 vim.keymap.set("n", "<leader>.", "<cmd>nohlsearch<cr>", { desc = "No Highlight Search" })
@@ -107,6 +108,7 @@ wk.register(
 
 -- f Prefix Find Keymaps
 vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Buffers" })
+vim.keymap.set("n", "<leader>fc", require("telescope.builtin").highlights, { desc = "Highlight Colors" })
 vim.keymap.set("n", "<leader>fd", require("telescope.builtin").diagnostics, { desc = "Diagnostics" })
 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Files" })
 vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Live Grep" })
@@ -125,6 +127,7 @@ end, { desc = "In Current Buffer" })
 -- t prefix ( terminal )
 vim.keymap.set("n", "<leader>ta", function () require("util").toggle_tinker() end, { desc = "Tinker" })
 vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { desc = "Terminal" })
+vim.keymap.set("n", "<leader>ty", function () require("util").toggle_yarn_watch() end, { desc = "Yarn Watch" })
 
 -- y Prefix
 vim.keymap.set({ "n", "v" }, "<leader>yo", '"_dP', { desc = "Paste Over" })
@@ -209,3 +212,9 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>ut", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
 
+-- terminal mode maps
+vim.keymap.set("t", "<ESC>", [[<C-\><C-n>]], { noremap = true })
+vim.keymap.set('t', '<C-h>', require('smart-splits').move_cursor_left)
+vim.keymap.set('t', '<C-j>', require('smart-splits').move_cursor_down)
+vim.keymap.set('t', '<C-k>', require('smart-splits').move_cursor_up)
+vim.keymap.set('t', '<C-l>', require('smart-splits').move_cursor_right)
