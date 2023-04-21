@@ -213,7 +213,7 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>ut", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
 
 -- terminal mode maps
-vim.keymap.set("t", "<ESC>", [[<C-\><C-n>]], { noremap = true })
+vim.keymap.set("t", "<C-n>", [[<C-\><C-n>]], { noremap = true })
 vim.keymap.set('t', '<C-h>', require('smart-splits').move_cursor_left)
 vim.keymap.set('t', '<C-j>', require('smart-splits').move_cursor_down)
 vim.keymap.set('t', '<C-k>', require('smart-splits').move_cursor_up)
