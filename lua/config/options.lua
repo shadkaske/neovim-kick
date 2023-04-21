@@ -1,6 +1,8 @@
 -- Set highlight on search
 vim.opt.hlsearch = false
 
+vim.opt.hidden = true
+
 -- Set Scrolloff
 vim.opt.scrolloff = 4
 
