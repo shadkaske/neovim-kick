@@ -45,4 +45,17 @@ function M.toggle_tinker()
   tinker:toggle()
 end
 
+function M.toggle_yarn_watch()
+  local Terminal = require("toggleterm.terminal").Terminal
+  local watch = Terminal:new({
+    cmd = "yarn run watch",
+    dir = "git_dir",
+    direction = "horizontal",
+    size = 50,
+    hidden = true
+  })
+
+  watch:toggle()
+end
+
 return M
