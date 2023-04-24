@@ -10,6 +10,8 @@ return {
 
     { 'williamboman/mason-lspconfig.nvim' },
 
+    { "b0o/schemastore.nvim" },
+
     {
       'j-hui/fidget.nvim',
       opts = {
@@ -41,7 +43,11 @@ return {
       cssls = {},
       eslint = {},
       html = {},
-      jsonls = {},
+      jsonls = {
+        json = {
+          schemas = require('schemastore').json.schemas(),
+        },
+      },
       lua_ls = {
         Lua = {
           workspace = { checkThirdParty = false },
@@ -54,7 +60,11 @@ return {
       sqlls = {},
       tailwindcss = {},
       volar = {},
-      yamlls = {},
+      yamlls = {
+        yaml = {
+          schemas = require('schemastore').yaml.schemas(),
+        },
+      },
     }
 
     -- Setup neovim lua configuration
