@@ -11,6 +11,9 @@ return {
         formatting.prettier,
         formatting.stylua,
         formatting.blade_formatter,
+        formatting.xmlformat,
+        formatting.sql_formatter,
+        formatting.shfmt,
       }
     })
   end
