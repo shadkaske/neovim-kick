@@ -12,37 +12,6 @@ return {
       end
     end
 
-    local function lsp_active()
-      local buf_clients = vim.lsp.get_active_clients()
-      if next(buf_clients) == nil then
-        return 'LSP Inactive'
-      end
-      local buf_ft = vim.bo.filetype
-      local buf_client_names = {}
-
-      -- add client
-      for _, client in pairs(buf_clients) do
-        if client.name ~= 'null-ls' then
-          table.insert(buf_client_names, client.name)
-        end
-      end
-
-      -- add nullls Names
-      local nullls_util = require("util.nullls")
-      local supported_formatters = nullls_util.list_registered_formatters(buf_ft)
-      vim.list_extend(buf_client_names, supported_formatters)
-
-      -- add linter
-      local supported_linters = nullls_util.list_registered_linters(buf_ft)
-      vim.list_extend(buf_client_names, supported_linters)
-
-      local unique_client_names = vim.fn.uniq(buf_client_names)
-
-      local language_servers = '[' .. table.concat(unique_client_names, ', ') .. ']'
-
-      return language_servers
-    end
-
     return {
       sections = {
         lualine_a = { {
@@ -81,7 +50,7 @@ return {
         lualine_x = {
           -- stylua: ignore
           {
-            lsp_active,
+            require("util.lualine.components").lsp_active,
             color = fg("Statement"),
             cond = require("util.lualine.condition").hide_in_width,
           },
@@ -95,7 +64,12 @@ return {
           },
         },
         lualine_y = {
-          { 'progress', separator = ' ', padding = { left = 0, right = 1 } },
+          {
+            require('util.lualine.components').progess_icon,
+            separator = ' ',
+            padding = { left = 0, right = 1 },
+            cond = require("util.lualine.condition").buffer_empty,
+          },
         },
         lualine_z = {
           { 'location', padding = { left = 0, right = 0 } },
