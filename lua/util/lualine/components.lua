@@ -4,7 +4,7 @@ local M = {}
 function M.lsp_active()
   local buf_clients = vim.lsp.get_active_clients()
   if next(buf_clients) == nil then
-    return '---'
+    return ''
   end
   local buf_ft = vim.bo.filetype
   local buf_client_names = {}
