@@ -65,14 +65,18 @@ return {
         },
         lualine_y = {
           {
-            require('util.lualine.components').progess_icon,
-            separator = ' ',
-            padding = { left = 0, right = 1 },
+            'location',
+            padding = { left = 1, right = 1 },
             cond = require("util.lualine.condition").buffer_empty,
           },
         },
         lualine_z = {
-          { 'location', padding = { left = 0, right = 0 } },
+          {
+            require('util.lualine.components').progess_icon,
+            separator = ' ',
+            padding = { left = 1, right = 1 },
+            cond = require("util.lualine.condition").buffer_empty,
+          },
         },
       },
       options = {
