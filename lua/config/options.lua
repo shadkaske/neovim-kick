@@ -17,6 +17,11 @@ vim.opt.mousemoveevent = true
 -- No Wrap
 vim.opt.wrap = false
 
+-- Default tab settings
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
