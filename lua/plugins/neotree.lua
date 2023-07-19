@@ -13,10 +13,17 @@ return {
         ["<cr>"] = "open_with_window_picker",
         ["s"] = "open_split",
         ["v"] = "open_vsplit",
+      },
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignored = false,
+        }
       }
     }
   },
   cmd = {
-    "NeoTreeFocusToggle"
+    "Neotree",
   },
 }
