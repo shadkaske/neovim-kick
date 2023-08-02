@@ -84,7 +84,7 @@ return {
         icons_enabled = true,
         theme = 'onedark',
         component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        section_separators = { left = ' ', right = ' ' },
       },
       extensions = {
         'fugitive',
