@@ -10,7 +10,6 @@ return {
   opts = {
     window = {
       mappings = {
-        ["<cr>"] = "open_with_window_picker",
         ["s"] = "open_split",
         ["v"] = "open_vsplit",
       },
