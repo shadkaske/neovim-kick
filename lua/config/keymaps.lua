@@ -63,7 +63,10 @@ vim.keymap.set("n", ";;", "A;<ESC>")
 vim.keymap.set("i", 'jk', "<C-o>A;")
 
 -- Toggle NeoTree
-vim.keymap.set({ "n", "v" }, "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "NeoTree Toggle" })
+vim.keymap.set({ "n", "v" }, "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "NvimTree Toggle" })
+
+-- Toggle NeoTree
+-- vim.keymap.set({ "n", "v" }, "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "NeoTree Toggle" })
 
 -- I really want my C-p back
 vim.keymap.set("n", "<C-p>", require("telescope.builtin").find_files, { desc = "File Finder" })
