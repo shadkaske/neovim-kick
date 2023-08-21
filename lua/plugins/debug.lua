@@ -44,7 +44,7 @@ return {
     dap.adapters.php = {
       type = "executable",
       command = "node",
-      args = { '/opt/vscode-php-debug/out/phpDebug.js' },
+      args = { '/home/kaskshad/Code/sources/vscode-php-debug/out/phpDebug.js' },
     }
 
     dap.configurations.php = {
