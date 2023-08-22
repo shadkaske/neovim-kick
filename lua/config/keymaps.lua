@@ -7,6 +7,8 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Insert Mode Shortcuts
 vim.keymap.set('i', '<C-e>', '<C-o>$', { silent = true })
 vim.keymap.set('i', '<A-;>', '<C-o>A;<ESC>', { silent = true })
+vim.keymap.set('i', '<C-;>', '<C-o>A;<ESC>', { silent = true })
+vim.keymap.set('i', ';;', '<C-o>A;<ESC>', { silent = true })
 
 -- Save buffer with C-s
 vim.keymap.set('n', '<C-s>', ':w<cr>', { silent = true })
@@ -60,6 +62,7 @@ vim.keymap.set('n', ']o', 'o<ESC>')
 
 -- Append semi colon
 vim.keymap.set('n', ';;', 'A;<ESC>')
+vim.keymap.set('n', '<C-;>', 'A;<ESC>')
 vim.keymap.set('i', 'jk', '<C-o>A;')
 
 -- Toggle NeoTree
