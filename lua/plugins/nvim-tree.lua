@@ -11,9 +11,6 @@ return {
         open_file = {
           resize_window = false,
         },
-        view = {
-          preserve_window_proportions = false,
-        },
       },
     }
   end,
