@@ -58,4 +58,17 @@ function M.toggle_yarn_watch()
   watch:toggle()
 end
 
+function M.toggle_yarn_dev()
+  local Terminal = require("toggleterm.terminal").Terminal
+  local watch = Terminal:new({
+    cmd = "yarn run dev",
+    dir = "git_dir",
+    direction = "horizontal",
+    size = 50,
+    hidden = true
+  })
+
+  watch:toggle()
+end
+
 return M
