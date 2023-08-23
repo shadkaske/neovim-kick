@@ -7,18 +7,19 @@ return {
   },
   config = function()
     require("bufferline").setup {
-      -- highlights = require("catppuccin.groups.integrations.bufferline").get(),
       options = {
-        themable = true,
-        diagnostics = false,
+        themable = false,
+        diagnostics = "nvim_lsp",
         show_buffer_close_icons = false,
-        separator_style = "slant",
+        separator_style = "thin",
+        numbers = "ordinal",
         offsets = {
           {
-              filetype = "NvimTree",
-              text = "File Explorer",
-              highlight = "Directory",
-              separator = true -- use a "true" to enable the default, or set your own character
+            filetype = "NvimTree",
+            text = "File Explorer",
+            highlight = "Directory",
+            text_align = "left",
+            separator = true   -- use a "true" to enable the default, or set your own character
           },
           {
             filetype = "neo-tree",
@@ -36,7 +37,7 @@ return {
         hover = {
           enabled = true,
           delay = 200,
-          reveal = {"close"},
+          reveal = { "close" },
         },
       }
     }
