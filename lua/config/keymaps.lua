@@ -91,6 +91,17 @@ vim.keymap.set('n', '<leader>ls', '<cmd>Telescope lsp_document_symbols<cr>', { d
 vim.keymap.set('n', '<leader>lS', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', { desc = 'Workspace Symbols' })
 vim.keymap.set('n', '<leader>le', '<cmd>Telescope quickfix<cr>', { desc = 'Telescope Quickfix' })
 
+-- Window Shortcuts
+vim.keymap.set('n', '<leader>w=', '<C-w>=', { desc = 'Equally high and wide' })
+vim.keymap.set('n', '<leader>w_', '<C-w>_', { desc = 'Max out the height' })
+vim.keymap.set('n', '<leader>wo', '<C-w>o', { desc = 'Close all other windows' })
+vim.keymap.set('n', '<leader>wq', '<C-w>q', { desc = 'Quit a window' })
+vim.keymap.set('n', '<leader>ws', '<C-w>s', { desc = 'Split window' })
+vim.keymap.set('n', '<leader>wv', '<C-w>v', { desc = 'Split window vertically' })
+vim.keymap.set('n', '<leader>ww', '<C-w>w', { desc = 'Switch windows' })
+vim.keymap.set('n', '<leader>wx', '<C-w>x', { desc = 'Swap current with next' })
+vim.keymap.set('n', '<leader>w|', '<C-w>|', { desc = 'Max out the width' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
@@ -108,6 +119,7 @@ wk.register({
   s = { name = string.format('%s Session', icons.Session) },
   t = { name = string.format('%s Terminal', icons.Terminal) },
   u = { name = string.format('%s UI', icons.UI) },
+  w = { name = string.format('%s Window', icons.Window) },
   y = { name = string.format('%s Clipboard', icons.Paste) },
 }, {
   mode = { 'n', 'v' },
@@ -140,6 +152,9 @@ vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<cr>', { desc = 'Terminal' })
 vim.keymap.set('n', '<leader>ty', function()
   require('util').toggle_yarn_watch()
 end, { desc = 'Yarn Watch' })
+vim.keymap.set('n', '<leader>td', function()
+  require('util').toggle_yarn_dev()
+end, { desc = 'Yarn Run Dev' })
 
 -- y Prefix
 vim.keymap.set({ 'n', 'v' }, '<leader>yo', '"_dP', { desc = 'Paste Over' })
@@ -153,6 +168,16 @@ vim.keymap.set({ 'n' }, '<leader>bD', '<cmd>Bdelete<cr>', { desc = 'Force Close 
 vim.keymap.set({ 'n' }, '<leader>bn', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
 vim.keymap.set({ 'n' }, '<leader>bp', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Previous Buffer' })
 vim.keymap.set({ 'n' }, '<leader>bj', '<cmd>BufferLinePick<cr>', { desc = 'Jump to Buffer' })
+vim.keymap.set({ 'n' }, '<leader>b1', '<cmd>BufferLineGoToBuffer 1<cr>', { desc = 'Go To Buffer 1' })
+vim.keymap.set({ 'n' }, '<leader>b2', '<cmd>BufferLineGoToBuffer 2<cr>', { desc = 'Go To Buffer 2' })
+vim.keymap.set({ 'n' }, '<leader>b3', '<cmd>BufferLineGoToBuffer 3<cr>', { desc = 'Go To Buffer 3' })
+vim.keymap.set({ 'n' }, '<leader>b4', '<cmd>BufferLineGoToBuffer 4<cr>', { desc = 'Go To Buffer 4' })
+vim.keymap.set({ 'n' }, '<leader>b5', '<cmd>BufferLineGoToBuffer 5<cr>', { desc = 'Go To Buffer 5' })
+vim.keymap.set({ 'n' }, '<leader>b6', '<cmd>BufferLineGoToBuffer 6<cr>', { desc = 'Go To Buffer 6' })
+vim.keymap.set({ 'n' }, '<leader>b7', '<cmd>BufferLineGoToBuffer 7<cr>', { desc = 'Go To Buffer 7' })
+vim.keymap.set({ 'n' }, '<leader>b8', '<cmd>BufferLineGoToBuffer 8<cr>', { desc = 'Go To Buffer 8' })
+vim.keymap.set({ 'n' }, '<leader>b9', '<cmd>BufferLineGoToBuffer 9<cr>', { desc = 'Go To Buffer 9' })
+vim.keymap.set({ 'n' }, '<leader>b0', '<cmd>BufferLineGoToBuffer 0<cr>', { desc = 'Go To Buffer 0' })
 vim.keymap.set('n', '<leader>bf', require('telescope.builtin').buffers, { desc = 'Buffers' })
 
 -- Buffer related
