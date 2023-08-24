@@ -20,12 +20,13 @@ return {
         formatting.xmlformat,
         formatting.sql_formatter,
         formatting.shfmt,
+        formatting.black,
         diagnostics.ansiblelint,
       },
     }
 
     require("mason-null-ls").setup({
-      ensure_installed = {},
+      ensure_installed = { "black" },
       automatic_installation = true,
     })
   end,
