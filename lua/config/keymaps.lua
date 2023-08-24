@@ -8,6 +8,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('i', '<C-e>', '<C-o>$', { silent = true })
 vim.keymap.set('i', '<A-;>', '<C-o>A;<ESC>', { silent = true })
 vim.keymap.set('i', '<C-;>', '<C-o>A;<ESC>', { silent = true })
+vim.keymap.set('i', '<C-,>', '<C-o>A,<ESC>', { silent = true })
 vim.keymap.set('i', ';;', '<C-o>A;<ESC>', { silent = true })
 
 -- Save buffer with C-s
