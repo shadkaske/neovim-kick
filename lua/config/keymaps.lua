@@ -106,6 +106,7 @@ vim.keymap.set('n', '<leader>w|', '<C-w>|', { desc = 'Max out the width' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 
+
 -- Which key labels
 local icons = require 'util.icons'
 
@@ -165,6 +166,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>yd', '"+d', { desc = 'Delete to System' })
 -- b Prefix
 vim.keymap.set({ 'n' }, '<leader>bd', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
 vim.keymap.set({ 'n' }, '<leader>bD', '<cmd>Bdelete<cr>', { desc = 'Force Close Buffer' })
+vim.keymap.set({ 'n' }, '<leader>br', '<cmd>e %<cr>', { desc = 'Reload Buffer' })
 vim.keymap.set({ 'n' }, '<leader>bn', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
 vim.keymap.set({ 'n' }, '<leader>bp', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Previous Buffer' })
 vim.keymap.set({ 'n' }, '<leader>bj', '<cmd>BufferLinePick<cr>', { desc = 'Jump to Buffer' })
