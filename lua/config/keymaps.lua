@@ -66,7 +66,7 @@ vim.keymap.set('n', ';;', 'A;<ESC>')
 vim.keymap.set('n', '<C-;>', 'A;<ESC>')
 vim.keymap.set('i', 'jk', '<C-o>A;')
 
--- Toggle NeoTree
+-- Toggle NvimTree
 vim.keymap.set({ 'n', 'v' }, '<leader>e', '<cmd>NvimTreeToggle<cr>', { desc = 'NvimTree Toggle' })
 
 -- Toggle NeoTree
