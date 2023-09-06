@@ -57,8 +57,9 @@ vim.o.termguicolors = true
 
 -- Colorscheme
 -- vim.cmd.colorscheme "onedark"
-require('onedark').setup {
-  style = 'darker'
-}
-
-require('onedark').load()
+-- require('onedark').setup {
+--   style = 'darker'
+-- }
+--
+-- require('onedark').load()
+vim.cmd.colorscheme "catppuccin"
