@@ -35,6 +35,7 @@ return {
         'vim',
         'vue',
         'yaml',
+        'org',
       },
 
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
@@ -42,7 +43,7 @@ return {
 
       highlight = {
         enable = true,
-        additional_vim_regex_highlighting = true,
+        additional_vim_regex_highlighting = {'org'},
       },
       indent = { enable = true, disable = { 'python' } },
       incremental_selection = {
