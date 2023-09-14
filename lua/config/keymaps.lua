@@ -125,6 +125,8 @@ wk.register({
   prefix = '<leader>',
 })
 
+vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'Force Quit' })
+
 -- f Prefix Find Keymaps
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Buffers' })
 vim.keymap.set('n', '<leader>fc', require('telescope.builtin').highlights, { desc = 'Highlight Colors' })
