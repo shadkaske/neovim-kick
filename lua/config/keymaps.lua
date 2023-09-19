@@ -69,9 +69,6 @@ vim.keymap.set('i', 'jk', '<C-o>A;')
 -- Toggle NvimTree
 vim.keymap.set({ 'n', 'v' }, '<leader>e', '<cmd>NvimTreeToggle<cr>', { desc = 'NvimTree Toggle' })
 
--- Toggle NeoTree
--- vim.keymap.set({ "n", "v" }, "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "NeoTree Toggle" })
-
 -- I really want my C-p back
 vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files, { desc = 'File Finder' })
 
@@ -127,6 +124,8 @@ wk.register({
   mode = { 'n', 'v' },
   prefix = '<leader>',
 })
+
+vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'Force Quit' })
 
 -- f Prefix Find Keymaps
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Buffers' })

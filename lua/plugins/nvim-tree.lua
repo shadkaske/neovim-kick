@@ -13,7 +13,7 @@ return {
         side = 'left',
       },
       update_focused_file = {
-        enable = true,
+        enable = false,
       },
       diagnostics = {
         enable = false,
