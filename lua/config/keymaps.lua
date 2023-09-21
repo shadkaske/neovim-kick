@@ -11,6 +11,9 @@ vim.keymap.set('i', '<C-;>', '<C-o>A;<ESC>', { silent = true })
 vim.keymap.set('i', '<C-,>', '<C-o>A,<ESC>', { silent = true })
 vim.keymap.set('i', ';;', '<C-o>A;<ESC>', { silent = true })
 
+-- Faster Telescope Grepping
+vim.keymap.set('n', '<C-g>', require('telescope.builtin').live_grep, { desc = 'Live Grep' })
+
 -- Save buffer with C-s
 vim.keymap.set('n', '<C-s>', ':w<cr>', { silent = true })
 vim.keymap.set('i', '<C-s>', '<ESC>:w<cr>', { silent = true })
