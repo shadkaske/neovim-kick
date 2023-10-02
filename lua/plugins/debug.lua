@@ -51,13 +51,6 @@ return {
       {
         type = 'php',
         request = 'launch',
-        name = 'Listen for Xdebug - Local',
-        port = '9003',
-        log = true,
-      },
-      {
-        type = 'php',
-        request = 'launch',
         name = 'Listen for Xdebug - Sail',
         port = '9003',
         pathMappings = {
