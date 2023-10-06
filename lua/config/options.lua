@@ -1,6 +1,9 @@
 -- Set highlight on search
 vim.opt.hlsearch = false
 
+-- Set Cursor Line on
+vim.opt.cursorline = true
+
 vim.opt.hidden = true
 
 -- Set Scrolloff
