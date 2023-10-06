@@ -279,6 +279,8 @@ if util.plugin_loaded 'nvim-dap' then
       require('dap.ui.widgets').hover()
     end, { desc = 'Debugger Hover' })
   end
+  vim.keymap.set('n', '<leader>dx', ':!sudo phpenmod xdebug<cr>', { desc = 'Enable Xdebug' })
+  vim.keymap.set('n', '<leader>dX', ':!sudo phpdismod xdebug<cr>', { desc = 'Disable Xdebug' })
 end
 
 -- p prefix (plugin manager)
