@@ -116,6 +116,7 @@ wk.register({
   d = { name = string.format('%s Debug', icons.Debugger) },
   f = { name = string.format('%s Find', icons.Search) },
   g = { name = string.format('%s Git', icons.Git) },
+  h = { name = string.format('%s Harppon', icons.kinds.Enum )},
   l = { name = string.format('%s LSP', icons.LSP) },
   p = { name = string.format('%s Plugins', icons.kinds.Package) },
   s = { name = string.format('%s Session', icons.Session) },
