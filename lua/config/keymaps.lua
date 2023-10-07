@@ -19,7 +19,12 @@ vim.keymap.set('n', '<C-s>', ':w<cr>', { silent = true })
 vim.keymap.set('i', '<C-s>', '<ESC>:w<cr>', { silent = true })
 
 -- Turn off search highlight
-vim.keymap.set('n', '<leader>.', '<cmd>nohlsearch<cr>', { desc = 'No Highlight Search' })
+vim.keymap.set(
+  'n',
+  '<leader>.',
+  [[ (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n" <BAR> redraw<CR>]],
+  { desc = 'Toggle Highlight Search', silent = true, expr = true }
+)
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
