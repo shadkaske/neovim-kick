@@ -11,12 +11,20 @@ vim.keymap.set('i', '<C-;>', '<C-o>A;<ESC>', { silent = true })
 vim.keymap.set('i', '<C-,>', '<C-o>A,<ESC>', { silent = true })
 vim.keymap.set('i', ';;', '<C-o>A;<ESC>', { silent = true })
 
+-- Faster Telescope Grepping
+vim.keymap.set('n', '<C-g>', require('telescope.builtin').live_grep, { desc = 'Live Grep' })
+
 -- Save buffer with C-s
 vim.keymap.set('n', '<C-s>', ':w<cr>', { silent = true })
 vim.keymap.set('i', '<C-s>', '<ESC>:w<cr>', { silent = true })
 
 -- Turn off search highlight
-vim.keymap.set('n', '<leader>.', '<cmd>nohlsearch<cr>', { desc = 'No Highlight Search' })
+vim.keymap.set(
+  'n',
+  '<leader>.',
+  [[ (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n" <BAR> redraw<CR>]],
+  { desc = 'Toggle Highlight Search', silent = true, expr = true }
+)
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -113,6 +121,7 @@ wk.register({
   d = { name = string.format('%s Debug', icons.Debugger) },
   f = { name = string.format('%s Find', icons.Search) },
   g = { name = string.format('%s Git', icons.Git) },
+  h = { name = string.format('%s Harppon', icons.kinds.Enum )},
   l = { name = string.format('%s LSP', icons.LSP) },
   p = { name = string.format('%s Plugins', icons.kinds.Package) },
   s = { name = string.format('%s Session', icons.Session) },
@@ -275,6 +284,8 @@ if util.plugin_loaded 'nvim-dap' then
       require('dap.ui.widgets').hover()
     end, { desc = 'Debugger Hover' })
   end
+  vim.keymap.set('n', '<leader>dx', ':!sudo phpenmod xdebug<cr>', { desc = 'Enable Xdebug' })
+  vim.keymap.set('n', '<leader>dX', ':!sudo phpdismod xdebug<cr>', { desc = 'Disable Xdebug' })
 end
 
 -- p prefix (plugin manager)

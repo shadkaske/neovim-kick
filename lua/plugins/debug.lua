@@ -55,16 +55,16 @@ return {
         port = '9003',
         log = true,
       },
-      {
-        type = 'php',
-        request = 'launch',
-        name = 'Listen for Xdebug - Sail',
-        port = '9003',
-        pathMappings = {
-          ['/var/www/html'] = '${workspaceFolder}',
-        },
-        log = true,
-      },
+      -- {
+      --   type = 'php',
+      --   request = 'launch',
+      --   name = 'Listen for Xdebug - Sail',
+      --   port = '9003',
+      --   pathMappings = {
+      --     ['/var/www/html'] = '${workspaceFolder}',
+      --   },
+      --   log = true,
+      -- },
     }
 
     vim.fn.sign_define('DapBreakpoint', { text = '󰯯', texthl = 'ErrorMsg', linehl = '', numhl = '' })

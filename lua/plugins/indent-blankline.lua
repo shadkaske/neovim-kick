@@ -1,52 +1,14 @@
 return {
-  -- Add indentation guides even on blank lines
   'lukas-reineke/indent-blankline.nvim',
-  -- Enable `lukas-reineke/indent-blankline.nvim`
-  -- See `:help indent_blankline.txt`
+  main = 'ibl',
   opts = {
-    char = '┊',
-    context_char = "┊",
-    context_highlight_list = { 'CmpItemAbbrMatchDefault' },
-    use_treesitter = true,
-    show_current_context = true,
-    show_trailing_blankline_indent = false,
-    buftype_exclude = {
-      "nofile",
-      "terminal",
+    indent = {
+      char = '┊',
     },
-    filetype_exclude = {
-      "help",
-      "startify",
-      "aerial",
-      "alpha",
-      "dashboard",
-      "lazy",
-      "neogitstatus",
-      "NvimTree",
-      "neo-tree",
-      "Trouble",
-    },
-    context_patterns = {
-      "class",
-      "return",
-      "function",
-      "method",
-      "^if",
-      "^while",
-      "jsx_element",
-      "^for",
-      "^object",
-      "^table",
-      "block",
-      "arguments",
-      "if_statement",
-      "else_clause",
-      "jsx_element",
-      "jsx_self_closing_element",
-      "try_statement",
-      "catch_clause",
-      "import_statement",
-      "operation_type",
+    scope = {
+      enabled = true,
+      show_start = false,
+      show_end = false,
     },
   },
 }
