@@ -3,6 +3,7 @@ return {
   lazy = false,
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
+    'akinsho/org-bullets.nvim',
   },
   config = function ()
     require('orgmode').setup_ts_grammar()

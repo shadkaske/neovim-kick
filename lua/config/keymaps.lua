@@ -138,7 +138,7 @@ vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'Force Quit' })
 
 -- f Prefix Find Keymaps
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Buffers' })
-vim.keymap.set('n', '<leader>fc', require('telescope.builtin').highlights, { desc = 'Highlight Colors' })
+vim.keymap.set('n', '<leader>fc', require('telescope.builtin').registers, { desc = 'Clipboard Registers' })
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = 'Diagnostics' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Files' })
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Live Grep' })
