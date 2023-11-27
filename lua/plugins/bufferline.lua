@@ -7,9 +7,9 @@ return {
   },
   config = function()
     require("bufferline").setup {
-      -- highlights = require("catppuccin.groups.integrations.bufferline").get(),
+      highlights = require("catppuccin.groups.integrations.bufferline").get(),
       options = {
-        themable = false,
+        themable = true,
         diagnostics = "nvim_lsp",
         show_buffer_close_icons = false,
         separator_style = "thin",
