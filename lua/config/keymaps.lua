@@ -15,8 +15,7 @@ vim.keymap.set('i', ';;', '<C-o>A;<ESC>', { silent = true })
 vim.keymap.set('n', '<C-g>', require('telescope.builtin').live_grep, { desc = 'Live Grep' })
 
 -- Save buffer with C-s
-vim.keymap.set('n', '<C-s>', ':w<cr>', { silent = true })
-vim.keymap.set('i', '<C-s>', '<ESC>:w<cr>', { silent = true })
+vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
 
 -- Turn off search highlight
 vim.keymap.set(
@@ -112,6 +111,7 @@ vim.keymap.set('n', '<leader>w|', '<C-w>|', { desc = 'Max out the width' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').find_files, { desc = 'Find Files' })
 
 -- Which key labels
 local icons = require 'util.icons'
@@ -121,7 +121,7 @@ wk.register({
   d = { name = string.format('%s Debug', icons.Debugger) },
   f = { name = string.format('%s Find', icons.Search) },
   g = { name = string.format('%s Git', icons.Git) },
-  h = { name = string.format('%s Harppon', icons.kinds.Enum )},
+  h = { name = string.format('%s Harppon', icons.kinds.Enum) },
   l = { name = string.format('%s LSP', icons.LSP) },
   p = { name = string.format('%s Plugins', icons.kinds.Package) },
   s = { name = string.format('%s Session', icons.Session) },
