@@ -4,7 +4,9 @@ return {
   priority = 1000,
   name = "catppuccin",
   opts = {
+    flavor = "mocha",
     integrations = {
+      aerial = true,
       bufferline = true,
       cmp = true,
       fidget = true,
@@ -18,7 +20,7 @@ return {
       mini = true,
       navic = {
         enabled = true,
-        custom_bg = "NONE",
+        -- custom_bg = "NONE",
       },
       nvimtree = true,
       noice = true,
