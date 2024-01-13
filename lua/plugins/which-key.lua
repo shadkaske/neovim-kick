@@ -22,7 +22,9 @@ return {
     local icons = require 'util.icons'
 
     wk.register({
-      b = { name = string.format('%s Buffers', icons.Buffers) },
+      b = { name = string.format('%s Buffers', icons.Buffers),
+        s = { name = 'swap' },
+      },
       d = { name = string.format('%s Debug', icons.Debugger) },
       f = { name = string.format('%s Find', icons.Search) },
       g = { name = string.format('%s Git', icons.Git) },
