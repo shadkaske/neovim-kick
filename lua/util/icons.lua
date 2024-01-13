@@ -38,6 +38,7 @@ return {
   GitStaged = "✓",
   GitUnstaged = "✗",
   GitUntracked = "★",
+  Laravel = "󰫐",
   LSP = "",
   LSPLoaded = "",
   LSPLoading1 = "",
