@@ -93,7 +93,6 @@ return {
     vim.keymap.set('n', '<leader>ci', '<cmd>LspInfo<cr>', { desc = 'Info' })
     vim.keymap.set('n', '<leader>cn', '<cmd>lua vim.diagnostic.goto_next()<cr>', { desc = 'Next Diagnostic' })
     vim.keymap.set('n', '<leader>cp', '<cmd>lua vim.diagnostic.goto_prev()<cr>', { desc = 'Prev Diagnostic' })
-    vim.keymap.set('n', '<leader>cl', '<cmd>lua vim.lsp.codelens.run()<cr>', { desc = 'CodeLens Action' })
     vim.keymap.set('n', '<leader>cq', '<cmd>lua vim.diagnostic.setloclist()<cr>', { desc = 'Quickfix' })
     vim.keymap.set('n', '<leader>cr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })
     vim.keymap.set('n', '<leader>cI', '<cmd>Mason<cr>', { desc = 'Mason Info' })
