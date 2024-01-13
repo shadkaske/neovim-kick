@@ -33,11 +33,6 @@ return {
       end, { desc = 'Format current buffer with LSP' })
     end
 
-    -- Enable the following language servers
-    --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-    --
-    --  Add any additional override configuration in the following tables. They will be passed to
-    --  the `settings` field of the server config. You must look up that documentation yourself.
     local servers = {
       ansiblels = {},
       bashls = {},
@@ -91,5 +86,16 @@ return {
         }
       end,
     }
+
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+    vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'Code Action' })
+    vim.keymap.set('n', '<leader>cf', '<cmd>lua vim.lsp.buf.format()<cr>', { desc = 'Format' })
+    vim.keymap.set('n', '<leader>ci', '<cmd>LspInfo<cr>', { desc = 'Info' })
+    vim.keymap.set('n', '<leader>cn', '<cmd>lua vim.diagnostic.goto_next()<cr>', { desc = 'Next Diagnostic' })
+    vim.keymap.set('n', '<leader>cp', '<cmd>lua vim.diagnostic.goto_prev()<cr>', { desc = 'Prev Diagnostic' })
+    vim.keymap.set('n', '<leader>cl', '<cmd>lua vim.lsp.codelens.run()<cr>', { desc = 'CodeLens Action' })
+    vim.keymap.set('n', '<leader>cq', '<cmd>lua vim.diagnostic.setloclist()<cr>', { desc = 'Quickfix' })
+    vim.keymap.set('n', '<leader>cr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })
+    vim.keymap.set('n', '<leader>cI', '<cmd>Mason<cr>', { desc = 'Mason Info' })
   end,
 }
