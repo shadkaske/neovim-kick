@@ -10,14 +10,14 @@ return {
         timeout = 1500,
       },
     },
-    "MunifTanjim/nui.nvim",
+    { "MunifTanjim/nui.nvim" },
   },
   opts = {
-    -- cmdline = {
-    --   enabled = true,
-    --   view = 'cmdline',
-    --   opts = {},
-    -- },
+    cmdline = {
+      enabled = true,
+      view = 'cmdline_popup',
+      opts = {},
+    },
     lsp = {
       -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
       override = {
@@ -34,5 +34,4 @@ return {
       lsp_doc_border = true,
     },
   },
-  init = function() vim.g.lsp_handlers_enabled = false end,
 }
