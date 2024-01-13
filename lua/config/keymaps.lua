@@ -75,18 +75,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 
 vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'Force Quit' })
 
--- t prefix ( terminal )
-vim.keymap.set('n', '<leader>ta', function()
-  require('util').toggle_tinker()
-end, { desc = 'Tinker' })
-vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<cr>', { desc = 'Terminal' })
-vim.keymap.set('n', '<leader>ty', function()
-  require('util').toggle_yarn_watch()
-end, { desc = 'Yarn Watch' })
-vim.keymap.set('n', '<leader>td', function()
-  require('util').toggle_yarn_dev()
-end, { desc = 'Yarn Run Dev' })
-
 -- yank Prefix
 vim.keymap.set({ 'n', 'v' }, '<leader>yo', '"_dP', { desc = 'Paste Over' })
 vim.keymap.set({ 'n', 'v' }, '<leader>yp', '"+p', { desc = 'Paste System' })
@@ -98,11 +86,6 @@ vim.keymap.set({ 'n' }, '<leader>br', '<cmd>e %<cr>', { desc = 'Reload Buffer' }
 
 -- Buffer related
 vim.keymap.set('n', '<leader>ba', '<cmd>bufdo bd<cr>', { desc = 'Close All Buffers' })
-
--- g prefix ( git stuff )
-vim.keymap.set('n', '<leader>gl', function()
-  require('util').toggle_lazygit()
-end, { desc = 'LazyGit' })
 
 -- d prefix ( Debug Stuff )
 if util.plugin_loaded 'nvim-dap' then
@@ -171,8 +154,6 @@ if util.plugin_loaded 'nvim-dap' then
       require('dap.ui.widgets').hover()
     end, { desc = 'Debugger Hover' })
   end
-  vim.keymap.set('n', '<leader>dx', ':!sudo phpenmod xdebug<cr>', { desc = 'Enable Xdebug' })
-  vim.keymap.set('n', '<leader>dX', ':!sudo phpdismod xdebug<cr>', { desc = 'Disable Xdebug' })
 end
 
 -- terminal mode maps
