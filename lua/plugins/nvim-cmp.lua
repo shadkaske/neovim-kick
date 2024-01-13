@@ -5,17 +5,17 @@ return {
     'hrsh7th/cmp-nvim-lsp',
     {
       'L3MON4D3/LuaSnip',
-      event = "BufReadPre",
+      event = 'BufReadPre',
       dependencies = {
-        "rafamadriz/friendly-snippets",
+        'rafamadriz/friendly-snippets',
       },
     },
     {
-      "onsails/lspkind.nvim",
+      'onsails/lspkind.nvim',
       opts = function()
-        local icons = require("util.icons")
+        local icons = require 'util.icons'
         return {
-          mode = "symbol",
+          mode = 'symbol',
           symbol_map = {
             Array = icons.kinds.Array,
             Boolean = icons.kinds.Boolean,
@@ -38,11 +38,11 @@ return {
       end,
       enabled = vim.g.icons_enabled,
       config = function(_, opts)
-        require("lspkind").init(opts)
-      end
+        require('lspkind').init(opts)
+      end,
     },
     'saadparwaiz1/cmp_luasnip',
-    "hrsh7th/cmp-path",
+    'hrsh7th/cmp-path',
   },
   opts = function()
     local cmp = require 'cmp'
@@ -50,8 +50,8 @@ return {
 
     luasnip.config.setup {}
 
-    require("luasnip.loaders.from_vscode").lazy_load()
-    local lspkind = require("lspkind")
+    require('luasnip.loaders.from_vscode').lazy_load()
+    local lspkind = require 'lspkind'
 
     cmp.setup {
       snippet = {
@@ -64,14 +64,15 @@ return {
         documentation = cmp.config.window.bordered(),
       },
       formatting = {
-        format = lspkind.cmp_format({
+        format = lspkind.cmp_format {
           mode = 'symbol',
           maxwidth = 40,
           ellipsis_char = '',
-          before = function (entry, vim_item)
+          ---@diagnostic disable-next-line: unused-local
+          before = function(entry, vim_item)
             return vim_item
-          end
-        })
+          end,
+        },
       },
       mapping = cmp.mapping.preset.insert {
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
@@ -107,5 +108,5 @@ return {
         { name = 'orgmode' },
       },
     }
-  end
+  end,
 }
