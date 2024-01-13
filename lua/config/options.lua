@@ -60,14 +60,6 @@ vim.o.timeoutlen = 100
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
--- Colorscheme
--- vim.cmd.colorscheme "onedark"
--- require('onedark').setup {
---   style = 'darker'
--- }
-
--- require('onedark').load()
 vim.cmd.colorscheme "catppuccin"
