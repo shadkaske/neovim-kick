@@ -5,12 +5,12 @@ return {
     -- Automatically install LSPs to stdpath for neovim
     {
       'williamboman/mason.nvim',
-      config = true
+      config = true,
     },
 
     { 'williamboman/mason-lspconfig.nvim' },
 
-    { "b0o/schemastore.nvim" },
+    { 'b0o/schemastore.nvim' },
 
     {
       'j-hui/fidget.nvim',
@@ -19,13 +19,13 @@ return {
         window = {
           blend = 0,
         },
-      }
+      },
     },
 
     -- Additional lua configuration, makes nvim stuff amazing!
     { 'folke/neodev.nvim' },
   },
-  config = function ()
+  config = function()
     local on_attach = function(_, bufnr)
       -- Create a command `:Format` local to the LSP buffer
       vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -91,5 +91,5 @@ return {
         }
       end,
     }
-  end
+  end,
 }
