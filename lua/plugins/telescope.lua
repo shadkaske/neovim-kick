@@ -40,10 +40,10 @@ return {
     { '<leader>gC', ':Telescope git_bcommits<cr>', desc = 'Checkout commit(for current file)' },
     { '<leader>gb', ':Telescope git_branches<CR>', desc = 'Checkout Branch' },
     { '<leader>go', ':Telescope git_status<cr>', desc = 'Open changed file' },
-    { '<leader>lS', ':Telescope lsp_dynamic_workspace_symbols<cr>', desc = 'Workspace Symbols' },
-    { '<leader>ld', ':Telescope diagnostics bufnr=0 theme=get_ivy<cr>', desc = 'Buffer Diagnostics' },
-    { '<leader>ls', ':Telescope lsp_document_symbols<cr>', desc = 'Document Symbols' },
-    { '<leader>lw', ':Telescope diagnostics<cr>', desc = 'Diagnostics' },
+    { '<leader>cS', ':Telescope lsp_dynamic_workspace_symbols<cr>', desc = 'Workspace Symbols' },
+    { '<leader>cd', ':Telescope diagnostics bufnr=0 theme=get_ivy<cr>', desc = 'Buffer Diagnostics' },
+    { '<leader>cs', ':Telescope lsp_document_symbols<cr>', desc = 'Document Symbols' },
+    { '<leader>cw', ':Telescope diagnostics<cr>', desc = 'Diagnostics' },
     {
       '<leader>fi',
       function()
