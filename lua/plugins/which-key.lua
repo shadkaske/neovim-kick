@@ -28,10 +28,10 @@ return {
       g = { name = string.format('%s Git', icons.Git) },
       h = { name = string.format('%s Harppon', icons.kinds.Enum) },
       l = { name = string.format('%s LSP', icons.LSP) },
-      p = { name = string.format('%s Plugins', icons.kinds.Package) },
+      -- p = { name = string.format('%s Plugins', icons.kinds.Package) },
       s = { name = string.format('%s Session', icons.Session) },
       t = { name = string.format('%s Terminal', icons.Terminal) },
-      u = { name = string.format('%s UI', icons.UI) },
+      -- u = { name = string.format('%s UI', icons.UI) },
       w = { name = string.format('%s Window', icons.Window) },
       y = { name = string.format('%s Clipboard', icons.Paste) },
     }, {
