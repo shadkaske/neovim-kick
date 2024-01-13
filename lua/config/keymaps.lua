@@ -11,9 +11,6 @@ vim.keymap.set('i', '<C-;>', '<C-o>A;<ESC>', { silent = true })
 vim.keymap.set('i', '<C-,>', '<C-o>A,<ESC>', { silent = true })
 vim.keymap.set('i', ';;', '<C-o>A;<ESC>', { silent = true })
 
--- Faster Telescope Grepping
-vim.keymap.set('n', '<C-g>', require('telescope.builtin').live_grep, { desc = 'Live Grep' })
-
 -- Save buffer with C-s
 vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
 
@@ -36,24 +33,6 @@ vim.keymap.set('v', '<', '<gv')
 -- Window close shortcut
 vim.keymap.set('n', '<leader>q', '<C-w>q', { desc = 'Close Window' })
 
--- resizing splits
--- these keymaps will also accept a range,
--- for example `10<A-h>` will `resize_left` by `(10 * config.default_amount)`
-vim.keymap.set('n', '<A-h>', require('smart-splits').resize_left)
-vim.keymap.set('n', '<A-j>', require('smart-splits').resize_down)
-vim.keymap.set('n', '<A-k>', require('smart-splits').resize_up)
-vim.keymap.set('n', '<A-l>', require('smart-splits').resize_right)
--- moving between splits
-vim.keymap.set('n', '<C-h>', require('smart-splits').move_cursor_left)
-vim.keymap.set('n', '<C-j>', require('smart-splits').move_cursor_down)
-vim.keymap.set('n', '<C-k>', require('smart-splits').move_cursor_up)
-vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
--- swapping buffers between windows
-vim.keymap.set('n', '<leader>bsh', require('smart-splits').swap_buf_left, { desc = 'Swap Buffer Left' })
-vim.keymap.set('n', '<leader>bsj', require('smart-splits').swap_buf_down, { desc = 'Swap Buffer Down' })
-vim.keymap.set('n', '<leader>bsk', require('smart-splits').swap_buf_up, { desc = 'Swap Buffer Up' })
-vim.keymap.set('n', '<leader>bsl', require('smart-splits').swap_buf_right, { desc = 'Swap Buffer Right' })
-
 -- Center view on jumps
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
@@ -73,17 +52,30 @@ vim.keymap.set('n', ';;', 'A;<ESC>')
 vim.keymap.set('n', '<C-;>', 'A;<ESC>')
 vim.keymap.set('i', 'jk', '<C-o>A;')
 
+-- resizing splits
+-- these keymaps will also accept a range,
+-- for example `10<A-h>` will `resize_left` by `(10 * config.default_amount)`
+vim.keymap.set('n', '<A-h>', require('smart-splits').resize_left)
+vim.keymap.set('n', '<A-j>', require('smart-splits').resize_down)
+vim.keymap.set('n', '<A-k>', require('smart-splits').resize_up)
+vim.keymap.set('n', '<A-l>', require('smart-splits').resize_right)
+-- moving between splits
+vim.keymap.set('n', '<C-h>', require('smart-splits').move_cursor_left)
+vim.keymap.set('n', '<C-j>', require('smart-splits').move_cursor_down)
+vim.keymap.set('n', '<C-k>', require('smart-splits').move_cursor_up)
+vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
+-- swapping buffers between windows
+vim.keymap.set('n', '<leader>bsh', require('smart-splits').swap_buf_left, { desc = 'Swap Buffer Left' })
+vim.keymap.set('n', '<leader>bsj', require('smart-splits').swap_buf_down, { desc = 'Swap Buffer Down' })
+vim.keymap.set('n', '<leader>bsk', require('smart-splits').swap_buf_up, { desc = 'Swap Buffer Up' })
+vim.keymap.set('n', '<leader>bsl', require('smart-splits').swap_buf_right, { desc = 'Swap Buffer Right' })
+
 -- Toggle NvimTree
 vim.keymap.set({ 'n', 'v' }, '<leader>e', '<cmd>NvimTreeToggle<cr>', { desc = 'NvimTree Toggle' })
-
--- I really want my C-p back
-vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files, { desc = 'File Finder' })
 
 -- Lsp Keymaps
 vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 vim.keymap.set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'Code Action' })
-vim.keymap.set('n', '<leader>ld', '<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>', { desc = 'Buffer Diagnostics' })
-vim.keymap.set('n', '<leader>lw', '<cmd>Telescope diagnostics<cr>', { desc = 'Diagnostics' })
 vim.keymap.set('n', '<leader>lf', '<cmd>lua vim.lsp.buf.format()<cr>', { desc = 'Format' })
 vim.keymap.set('n', '<leader>li', '<cmd>LspInfo<cr>', { desc = 'Info' })
 vim.keymap.set('n', '<leader>lI', '<cmd>Mason<cr>', { desc = 'Mason Info' })
@@ -92,9 +84,6 @@ vim.keymap.set('n', '<leader>lp', '<cmd>lua vim.diagnostic.goto_prev()<cr>', { d
 vim.keymap.set('n', '<leader>ll', '<cmd>lua vim.lsp.codelens.run()<cr>', { desc = 'CodeLens Action' })
 vim.keymap.set('n', '<leader>lq', '<cmd>lua vim.diagnostic.setloclist()<cr>', { desc = 'Quickfix' })
 vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })
-vim.keymap.set('n', '<leader>ls', '<cmd>Telescope lsp_document_symbols<cr>', { desc = 'Document Symbols' })
-vim.keymap.set('n', '<leader>lS', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', { desc = 'Workspace Symbols' })
-vim.keymap.set('n', '<leader>le', '<cmd>Telescope quickfix<cr>', { desc = 'Telescope Quickfix' })
 
 -- Window Shortcuts
 vim.keymap.set('n', '<leader>w=', '<C-w>=', { desc = 'Equally high and wide' })
@@ -110,8 +99,6 @@ vim.keymap.set('n', '<leader>w|', '<C-w>|', { desc = 'Max out the width' })
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').find_files, { desc = 'Find Files' })
 
 -- Which key labels
 local icons = require 'util.icons'
@@ -135,24 +122,6 @@ wk.register({
 })
 
 vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'Force Quit' })
-
--- f Prefix Find Keymaps
-vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Buffers' })
-vim.keymap.set('n', '<leader>fc', require('telescope.builtin').registers, { desc = 'Clipboard Registers' })
-vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = 'Diagnostics' })
-vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Files' })
-vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Live Grep' })
-vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = 'Help' })
-vim.keymap.set('n', '<leader>fk', '<cmd>Telescope keymaps<cr>', { desc = 'Keymaps' })
-vim.keymap.set('n', '<leader>fr', require('telescope.builtin').oldfiles, { desc = 'Recent Files' })
-vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = 'Current Word' })
-vim.keymap.set('n', '<leader>fi', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = 'In Current Buffer' })
 
 -- t prefix ( terminal )
 vim.keymap.set('n', '<leader>ta', function()
@@ -189,28 +158,26 @@ vim.keymap.set({ 'n' }, '<leader>b7', '<cmd>BufferLineGoToBuffer 7<cr>', { desc 
 vim.keymap.set({ 'n' }, '<leader>b8', '<cmd>BufferLineGoToBuffer 8<cr>', { desc = 'Go To Buffer 8' })
 vim.keymap.set({ 'n' }, '<leader>b9', '<cmd>BufferLineGoToBuffer 9<cr>', { desc = 'Go To Buffer 9' })
 vim.keymap.set({ 'n' }, '<leader>b0', '<cmd>BufferLineGoToBuffer 0<cr>', { desc = 'Go To Buffer 0' })
-vim.keymap.set('n', '<leader>bf', require('telescope.builtin').buffers, { desc = 'Buffers' })
 
 -- Buffer related
-vim.keymap.set({ 'n' }, '<leader>C', '<cmd>Bdelete!<cr>', { desc = 'Force Close Buffer' })
 vim.keymap.set({ 'n' }, '<leader>c', '<cmd>Bdelete!<cr>', { desc = 'Close Buffer' })
 vim.keymap.set({ 'n' }, 'H', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev Buffer' })
 vim.keymap.set({ 'n' }, 'L', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
 vim.keymap.set('n', '<leader>ba', '<cmd>bufdo bd<cr>', { desc = 'Close All Buffers' })
 
 -- g prefix ( git stuff )
-vim.keymap.set('n', '<leader>gC', '<cmd>Telescope git_bcommits<cr>', { desc = 'Checkout commit(for current file)' })
+-- vim.keymap.set('n', '<leader>gC', '<cmd>Telescope git_bcommits<cr>', { desc = 'Checkout commit(for current file)' })
 vim.keymap.set('n', '<leader>gc', '<cmd>G commit<cr>', { desc = 'Git Commit' })
 vim.keymap.set('n', '<leader>gP', "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", { desc = 'Preview Hunk' })
 vim.keymap.set('n', '<leader>gR', "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", { desc = 'Reset Buffer' })
-vim.keymap.set('n', '<leader>gb', require('telescope.builtin').git_branches, { desc = 'Checkout Branch' })
+-- vim.keymap.set('n', '<leader>gb', require('telescope.builtin').git_branches, { desc = 'Checkout Branch' })
 vim.keymap.set('n', '<leader>gd', '<cmd>Gitsigns diffthis HEAD<cr>', { desc = 'Git Diff' })
 vim.keymap.set('n', '<leader>gg', '<cmd>G<cr>', { desc = 'Fugitive Status' })
 vim.keymap.set('n', '<leader>gl', function()
   require('util').toggle_lazygit()
 end, { desc = 'LazyGit' })
 vim.keymap.set('n', '<leader>gn', "<cmd>lua require('gitsigns').next_hunk({navigation_message=false})<cr>", { desc = 'Next Hunk' })
-vim.keymap.set('n', '<leader>go', '<cmd>Telescope git_status<cr>', { desc = 'Open changed file' })
+-- vim.keymap.set('n', '<leader>go', '<cmd>Telescope git_status<cr>', { desc = 'Open changed file' })
 vim.keymap.set('n', '<leader>gp', "<cmd>lua require('gitsigns').prev_hunk({navigation_message=false})<cr>", { desc = 'Previous Hunk' })
 vim.keymap.set('n', '<leader>gr', "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", { desc = 'Reset Hunk' })
 vim.keymap.set('n', '<leader>gs', '<cmd>G<cr>', { desc = 'Status' })
