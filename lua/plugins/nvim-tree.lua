@@ -34,7 +34,7 @@ return {
       filters = {
         git_ignored = false,
         custom = {
-          "^.null-ls.*",
+          '^.null-ls.*',
         },
       },
       actions = {
@@ -43,5 +43,8 @@ return {
         },
       },
     }
+
+    -- Toggle NvimTree
+    vim.keymap.set({ 'n', 'v' }, '<leader>e', '<cmd>NvimTreeToggle<cr>', { desc = 'NvimTree Toggle' })
   end,
 }

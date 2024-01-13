@@ -46,9 +46,6 @@ vim.keymap.set('n', 'N', 'Nzz')
 vim.keymap.set('n', '[o', 'O<ESC>')
 vim.keymap.set('n', ']o', 'o<ESC>')
 
--- Toggle NvimTree
-vim.keymap.set({ 'n', 'v' }, '<leader>e', '<cmd>NvimTreeToggle<cr>', { desc = 'NvimTree Toggle' })
-
 -- Lsp Keymaps
 vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 vim.keymap.set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'Code Action' })
