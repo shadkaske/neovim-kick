@@ -20,5 +20,10 @@ return {
     vim.keymap.set('n', '<leader>bsj', require('smart-splits').swap_buf_down, { desc = 'Swap Buffer Down' })
     vim.keymap.set('n', '<leader>bsk', require('smart-splits').swap_buf_up, { desc = 'Swap Buffer Up' })
     vim.keymap.set('n', '<leader>bsl', require('smart-splits').swap_buf_right, { desc = 'Swap Buffer Right' })
+    -- terminal mode
+    vim.keymap.set('t', '<C-h>', require('smart-splits').move_cursor_left)
+    vim.keymap.set('t', '<C-j>', require('smart-splits').move_cursor_down)
+    vim.keymap.set('t', '<C-k>', require('smart-splits').move_cursor_up)
+    vim.keymap.set('t', '<C-l>', require('smart-splits').move_cursor_right)
   end,
 }
