@@ -1,5 +1,4 @@
 return {
-  -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
@@ -7,7 +6,6 @@ return {
   build = ':TSUpdate',
   opts = function()
     require('nvim-treesitter.configs').setup {
-      -- Add languages to be installed here that you want installed for treesitter
       ensure_installed = {
         'bash',
         'c',
@@ -44,7 +42,7 @@ return {
 
       highlight = {
         enable = true,
-        additional_vim_regex_highlighting = {'org'},
+        additional_vim_regex_highlighting = { 'org' },
       },
       indent = { enable = true, disable = { 'python' } },
       incremental_selection = {
