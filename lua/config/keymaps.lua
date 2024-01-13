@@ -7,6 +7,8 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('i', '<A-e>', '<C-o>$', { silent = true })
 vim.keymap.set('i', '<A-;>', '<C-o>A;<ESC>', { silent = true })
 vim.keymap.set('i', '<A-,>', '<C-o>A,<ESC>', { silent = true })
+vim.keymap.set('n', '<A-;>', 'A;<ESC>', { silent = true })
+vim.keymap.set('n', '<A-,>', 'A,<ESC>', { silent = true })
 
 -- Save buffer with C-s
 vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
@@ -43,11 +45,6 @@ vim.keymap.set('n', 'N', 'Nzz')
 -- Insert Lines in Normal Mode
 vim.keymap.set('n', '[o', 'O<ESC>')
 vim.keymap.set('n', ']o', 'o<ESC>')
-
--- Append semi colon
-vim.keymap.set('n', ';;', 'A;<ESC>')
-vim.keymap.set('n', '<C-;>', 'A;<ESC>')
-vim.keymap.set('i', 'jk', '<C-o>A;')
 
 -- resizing splits
 -- these keymaps will also accept a range,
