@@ -94,8 +94,6 @@ vim.keymap.set({ 'n', 'v' }, '<leader>yy', '"+y', { desc = 'Yank to System' })
 vim.keymap.set({ 'n', 'v' }, '<leader>yd', '"+d', { desc = 'Delete to System' })
 
 -- b Prefix
-vim.keymap.set({ 'n' }, '<leader>bd', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
-vim.keymap.set({ 'n' }, '<leader>bD', '<cmd>Bdelete<cr>', { desc = 'Force Close Buffer' })
 vim.keymap.set({ 'n' }, '<leader>br', '<cmd>e %<cr>', { desc = 'Reload Buffer' })
 vim.keymap.set({ 'n' }, '<leader>bn', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
 vim.keymap.set({ 'n' }, '<leader>bp', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Previous Buffer' })
@@ -112,7 +110,6 @@ vim.keymap.set({ 'n' }, '<leader>b9', '<cmd>BufferLineGoToBuffer 9<cr>', { desc 
 vim.keymap.set({ 'n' }, '<leader>b0', '<cmd>BufferLineGoToBuffer 0<cr>', { desc = 'Go To Buffer 0' })
 
 -- Buffer related
-vim.keymap.set({ 'n' }, '<leader>c', '<cmd>Bdelete!<cr>', { desc = 'Close Buffer' })
 vim.keymap.set({ 'n' }, 'H', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev Buffer' })
 vim.keymap.set({ 'n' }, 'L', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
 vim.keymap.set('n', '<leader>ba', '<cmd>bufdo bd<cr>', { desc = 'Close All Buffers' })
