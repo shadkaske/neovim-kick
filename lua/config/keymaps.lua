@@ -100,11 +100,9 @@ vim.keymap.set({ 'n' }, '<leader>br', '<cmd>e %<cr>', { desc = 'Reload Buffer' }
 vim.keymap.set('n', '<leader>ba', '<cmd>bufdo bd<cr>', { desc = 'Close All Buffers' })
 
 -- g prefix ( git stuff )
-vim.keymap.set('n', '<leader>gc', '<cmd>G commit<cr>', { desc = 'Git Commit' })
 vim.keymap.set('n', '<leader>gP', "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", { desc = 'Preview Hunk' })
 vim.keymap.set('n', '<leader>gR', "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", { desc = 'Reset Buffer' })
 vim.keymap.set('n', '<leader>gd', '<cmd>Gitsigns diffthis HEAD<cr>', { desc = 'Git Diff' })
-vim.keymap.set('n', '<leader>gg', '<cmd>G<cr>', { desc = 'Fugitive Status' })
 vim.keymap.set('n', '<leader>gl', function()
   require('util').toggle_lazygit()
 end, { desc = 'LazyGit' })
