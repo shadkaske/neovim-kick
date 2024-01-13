@@ -22,7 +22,6 @@ return {
     local icons = require 'util.icons'
 
     wk.register({
-      a = { name = string.format('%s Artisan', icons.Laravel) },
       b = {
         name = string.format('%s Buffers', icons.Buffers),
         s = { name = 'swap' },
@@ -32,6 +31,7 @@ return {
       f = { name = string.format('%s Find', icons.Search) },
       g = { name = string.format('%s Git', icons.Git) },
       h = { name = string.format('%s Harppon', icons.kinds.Enum) },
+      l = { name = string.format('%s Laravel', icons.Laravel) },
       o = { name = string.format('%s Org', icons.Spellcheck) },
       s = { name = string.format('%s Session', icons.Session) },
       t = { name = string.format('%s Terminal', icons.Terminal) },
