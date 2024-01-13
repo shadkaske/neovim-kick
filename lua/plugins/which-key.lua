@@ -10,9 +10,9 @@ return {
         spacing = 4,
       },
       icons = {
-        breadcrumb = '»', -- symbol used in the command line area that shows your active key combo
-        separator = '➜', -- symbol used between a key and it's label
-        group = '', -- symbol prepended to a group
+        breadcrumb = '»',
+        separator = '➜',
+        group = '',
       },
     }
 
@@ -33,11 +33,8 @@ return {
       g = { name = string.format('%s Git', icons.Git) },
       h = { name = string.format('%s Harppon', icons.kinds.Enum) },
       o = { name = string.format('%s Org', icons.Spellcheck) },
-      -- p = { name = string.format('%s Plugins', icons.kinds.Package) },
       s = { name = string.format('%s Session', icons.Session) },
       t = { name = string.format('%s Terminal', icons.Terminal) },
-      -- u = { name = string.format('%s UI', icons.UI) },
-      -- w = { name = string.format('%s Window', icons.Window) },
       y = { name = string.format('%s Clipboard', icons.Paste) },
     }, {
       mode = { 'n', 'v' },
