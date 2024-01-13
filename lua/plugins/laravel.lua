@@ -6,25 +6,17 @@ return {
     'MunifTanjim/nui.nvim',
     'nvimtools/none-ls.nvim',
   },
-  cmd = { 'Sail', 'Artisan', 'Composer', 'Npm', 'Yarn', 'Laravel' },
-  keys = {
-    { "<leader>aa", ":Laravel artisan<cr>" },
-    { "<leader>ar", ":Laravel routes<cr>" },
-    { "<leader>am", ":Laravel related<cr>" },
-    {
-      "<leader>at",
-      function()
-        require("laravel.tinker").send_to_tinker()
-      end,
-      mode = "v",
-      desc = "Laravel Application Routes",
-    },
-  },
+  cmd = { 'Artisan', 'Composer', 'Npm', 'Yarn', 'Laravel' },
   event = { 'VeryLazy' },
   features = {
     null_ls = {
       enable = true,
     },
+  },
+  keys = {
+    { '<leader>la', ':Laravel artisan<cr>', desc = 'Artisan Commands' },
+    { '<leader>lr', ':Laravel routes<cr>', desc = 'Laravel Routes' },
+    { '<leader>lt', ':Artisan tinker<cr>', desc = 'Tinker' },
   },
   config = function()
     require('laravel').setup()
