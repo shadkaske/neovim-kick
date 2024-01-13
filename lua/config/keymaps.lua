@@ -27,9 +27,6 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('v', '<', '<gv')
 
--- Window close shortcut
-vim.keymap.set('n', '<leader>q', '<C-w>q', { desc = 'Close Window' })
-
 -- Center view on jumps
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
@@ -56,22 +53,9 @@ vim.keymap.set('n', '<leader>ll', '<cmd>lua vim.lsp.codelens.run()<cr>', { desc 
 vim.keymap.set('n', '<leader>lq', '<cmd>lua vim.diagnostic.setloclist()<cr>', { desc = 'Quickfix' })
 vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })
 
--- Window Shortcuts
-vim.keymap.set('n', '<leader>w=', '<C-w>=', { desc = 'Equally high and wide' })
-vim.keymap.set('n', '<leader>w_', '<C-w>_', { desc = 'Max out the height' })
-vim.keymap.set('n', '<leader>wo', '<C-w>o', { desc = 'Close all other windows' })
-vim.keymap.set('n', '<leader>wq', '<C-w>q', { desc = 'Quit a window' })
-vim.keymap.set('n', '<leader>ws', '<C-w>s', { desc = 'Split window' })
-vim.keymap.set('n', '<leader>wv', '<C-w>v', { desc = 'Split window vertically' })
-vim.keymap.set('n', '<leader>ww', '<C-w>w', { desc = 'Switch windows' })
-vim.keymap.set('n', '<leader>wx', '<C-w>x', { desc = 'Swap current with next' })
-vim.keymap.set('n', '<leader>w|', '<C-w>|', { desc = 'Max out the width' })
-
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-
-vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'Force Quit' })
 
 -- yank Prefix
 vim.keymap.set({ 'n', 'v' }, '<leader>yo', '"_dP', { desc = 'Paste Over' })
