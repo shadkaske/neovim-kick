@@ -16,7 +16,6 @@ return {
   keys = {
     { '<leader>la', ':Laravel artisan<cr>', desc = 'Artisan Commands' },
     { '<leader>lr', ':Laravel routes<cr>', desc = 'Laravel Routes' },
-    { '<leader>lt', ':Artisan tinker<cr>', desc = 'Tinker' },
   },
   config = function()
     require('laravel').setup()

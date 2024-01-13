@@ -34,7 +34,7 @@ return {
       l = { name = string.format('%s Laravel', icons.Laravel) },
       o = { name = string.format('%s Org', icons.Spellcheck) },
       s = { name = string.format('%s Session', icons.Session) },
-      t = { name = string.format('%s Terminal', icons.Terminal) },
+      -- t = { name = string.format('%s Terminal', icons.Terminal) },
       y = { name = string.format('%s Clipboard', icons.Paste) },
     }, {
       mode = { 'n', 'v' },
