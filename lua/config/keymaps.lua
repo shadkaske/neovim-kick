@@ -1,15 +1,12 @@
-local wk = require 'which-key'
 local util = require 'util'
 
 -- Don't Override Leader
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Insert Mode Shortcuts
-vim.keymap.set('i', '<C-e>', '<C-o>$', { silent = true })
+vim.keymap.set('i', '<A-e>', '<C-o>$', { silent = true })
 vim.keymap.set('i', '<A-;>', '<C-o>A;<ESC>', { silent = true })
-vim.keymap.set('i', '<C-;>', '<C-o>A;<ESC>', { silent = true })
-vim.keymap.set('i', '<C-,>', '<C-o>A,<ESC>', { silent = true })
-vim.keymap.set('i', ';;', '<C-o>A;<ESC>', { silent = true })
+vim.keymap.set('i', '<A-,>', '<C-o>A,<ESC>', { silent = true })
 
 -- Save buffer with C-s
 vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
@@ -100,27 +97,6 @@ vim.keymap.set('n', '<leader>w|', '<C-w>|', { desc = 'Max out the width' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 
--- Which key labels
-local icons = require 'util.icons'
-
-wk.register({
-  b = { name = string.format('%s Buffers', icons.Buffers) },
-  d = { name = string.format('%s Debug', icons.Debugger) },
-  f = { name = string.format('%s Find', icons.Search) },
-  g = { name = string.format('%s Git', icons.Git) },
-  h = { name = string.format('%s Harppon', icons.kinds.Enum) },
-  l = { name = string.format('%s LSP', icons.LSP) },
-  p = { name = string.format('%s Plugins', icons.kinds.Package) },
-  s = { name = string.format('%s Session', icons.Session) },
-  t = { name = string.format('%s Terminal', icons.Terminal) },
-  u = { name = string.format('%s UI', icons.UI) },
-  w = { name = string.format('%s Window', icons.Window) },
-  y = { name = string.format('%s Clipboard', icons.Paste) },
-}, {
-  mode = { 'n', 'v' },
-  prefix = '<leader>',
-})
-
 vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'Force Quit' })
 
 -- t prefix ( terminal )
@@ -135,7 +111,7 @@ vim.keymap.set('n', '<leader>td', function()
   require('util').toggle_yarn_dev()
 end, { desc = 'Yarn Run Dev' })
 
--- y Prefix
+-- yank Prefix
 vim.keymap.set({ 'n', 'v' }, '<leader>yo', '"_dP', { desc = 'Paste Over' })
 vim.keymap.set({ 'n', 'v' }, '<leader>yp', '"+p', { desc = 'Paste System' })
 vim.keymap.set({ 'n', 'v' }, '<leader>yy', '"+y', { desc = 'Yank to System' })
