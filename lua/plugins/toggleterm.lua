@@ -15,10 +15,5 @@ return {
     vim.keymap.set('n', '<leader>td', function()
       require('util').toggle_yarn_dev()
     end, { desc = 'Yarn Run Dev' })
-
-    -- g prefix ( git stuff )
-    vim.keymap.set('n', '<leader>gl', function()
-      require('util').toggle_lazygit()
-    end, { desc = 'LazyGit' })
   end,
 }

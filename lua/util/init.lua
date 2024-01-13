@@ -17,21 +17,6 @@ function M.on_attach(on_attach)
   })
 end
 
-function M.toggle_lazygit()
-  local Terminal = require("toggleterm.terminal").Terminal
-  local lazygit = Terminal:new({
-    cmd = "lazygit",
-    dir = "git_dir",
-    direction = "float",
-    float_opts = {
-      border = "double",
-    },
-    hidden = true
-  })
-
-  lazygit:toggle()
-end
-
 function M.toggle_tinker()
   local Terminal = require("toggleterm.terminal").Terminal
   local tinker = Terminal:new({
