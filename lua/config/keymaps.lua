@@ -95,23 +95,8 @@ vim.keymap.set({ 'n', 'v' }, '<leader>yd', '"+d', { desc = 'Delete to System' })
 
 -- b Prefix
 vim.keymap.set({ 'n' }, '<leader>br', '<cmd>e %<cr>', { desc = 'Reload Buffer' })
-vim.keymap.set({ 'n' }, '<leader>bn', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
-vim.keymap.set({ 'n' }, '<leader>bp', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Previous Buffer' })
-vim.keymap.set({ 'n' }, '<leader>bj', '<cmd>BufferLinePick<cr>', { desc = 'Jump to Buffer' })
-vim.keymap.set({ 'n' }, '<leader>b1', '<cmd>BufferLineGoToBuffer 1<cr>', { desc = 'Go To Buffer 1' })
-vim.keymap.set({ 'n' }, '<leader>b2', '<cmd>BufferLineGoToBuffer 2<cr>', { desc = 'Go To Buffer 2' })
-vim.keymap.set({ 'n' }, '<leader>b3', '<cmd>BufferLineGoToBuffer 3<cr>', { desc = 'Go To Buffer 3' })
-vim.keymap.set({ 'n' }, '<leader>b4', '<cmd>BufferLineGoToBuffer 4<cr>', { desc = 'Go To Buffer 4' })
-vim.keymap.set({ 'n' }, '<leader>b5', '<cmd>BufferLineGoToBuffer 5<cr>', { desc = 'Go To Buffer 5' })
-vim.keymap.set({ 'n' }, '<leader>b6', '<cmd>BufferLineGoToBuffer 6<cr>', { desc = 'Go To Buffer 6' })
-vim.keymap.set({ 'n' }, '<leader>b7', '<cmd>BufferLineGoToBuffer 7<cr>', { desc = 'Go To Buffer 7' })
-vim.keymap.set({ 'n' }, '<leader>b8', '<cmd>BufferLineGoToBuffer 8<cr>', { desc = 'Go To Buffer 8' })
-vim.keymap.set({ 'n' }, '<leader>b9', '<cmd>BufferLineGoToBuffer 9<cr>', { desc = 'Go To Buffer 9' })
-vim.keymap.set({ 'n' }, '<leader>b0', '<cmd>BufferLineGoToBuffer 0<cr>', { desc = 'Go To Buffer 0' })
 
 -- Buffer related
-vim.keymap.set({ 'n' }, 'H', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev Buffer' })
-vim.keymap.set({ 'n' }, 'L', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
 vim.keymap.set('n', '<leader>ba', '<cmd>bufdo bd<cr>', { desc = 'Close All Buffers' })
 
 -- g prefix ( git stuff )
