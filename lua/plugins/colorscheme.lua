@@ -7,7 +7,6 @@ return {
     flavor = "mocha",
     integrations = {
       aerial = true,
-      bufferline = true,
       cmp = true,
       fidget = true,
       gitsigns = true,

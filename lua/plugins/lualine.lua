@@ -81,7 +81,7 @@ return {
         },
       },
       options = {
-        globalstatus = true,
+        globalstatus = false,
         icons_enabled = true,
         theme = 'auto',
         component_separators = { left = '', right = '' },
@@ -90,6 +90,7 @@ return {
       extensions = {
         'fugitive',
         'neo-tree',
+        'nvim-tree',
         'lazy',
         'nvim-dap-ui',
         'quickfix',
