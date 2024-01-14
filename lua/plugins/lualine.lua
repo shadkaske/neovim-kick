@@ -44,7 +44,6 @@ return {
           { 'filename', path = 1, symbols = { modified = '  ', readonly = '', unnamed = '' } },
         },
         lualine_x = {
-          -- stylua: ignore
           {
             require("util.lualine.components").lsp_active,
             color = fg("Statement"),
