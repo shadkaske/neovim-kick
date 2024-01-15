@@ -17,7 +17,7 @@ function M.lsp_active()
   end
 
   -- add nullls Names
-  local nullls_util = require("util.nullls")
+  local nullls_util = require 'util.nullls'
   local supported_formatters = nullls_util.list_registered_formatters(buf_ft)
   vim.list_extend(buf_client_names, supported_formatters)
 
@@ -33,9 +33,9 @@ function M.lsp_active()
 end
 
 function M.progess_icon()
-  local current_line = vim.fn.line "."
-  local total_lines = vim.fn.line "$"
-  local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
+  local current_line = vim.fn.line '.'
+  local total_lines = vim.fn.line '$'
+  local chars = { '__', '▁▁', '▂▂', '▃▃', '▄▄', '▅▅', '▆▆', '▇▇', '██' }
   local line_ratio = current_line / total_lines
   local index = math.ceil(line_ratio * #chars)
   return chars[index]

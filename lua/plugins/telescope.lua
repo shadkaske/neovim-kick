@@ -11,11 +11,6 @@ return {
       prompt_prefix = ' 󰭎  ',
       selection_caret = '  ',
       sorting_strategy = 'descending',
-      mappings = {
-        i = {
-          ['<esc>'] = require('telescope.actions').close,
-        },
-      },
       file_ignore_patterns = { 'node_modules' },
       path_display = { 'truncate' },
       set_env = { ['COLORTERM'] = 'truecolor' },
@@ -26,7 +21,7 @@ return {
     { '<C-g>', ':Telescope live_grep<CR>', desc = 'Telescope Live Grep' },
     { '<leader>bf', ':Telescope buffers<CR>', desc = 'Buffers' },
     { '<leader>cS', ':Telescope lsp_dynamic_workspace_symbols<cr>', desc = 'Workspace Symbols' },
-    { '<leader>cd', ':Telescope diagnostics bufnr=0 theme=get_ivy<cr>', desc = 'Buffer Diagnostics' },
+    { '<leader>cd', ':Telescope diagnostics<cr>', desc = 'Buffer Diagnostics' },
     { '<leader>cs', ':Telescope lsp_document_symbols<cr>', desc = 'Document Symbols' },
     { '<leader>cw', ':Telescope diagnostics<cr>', desc = 'Diagnostics' },
     { '<leader>fa', ':Telescope find_files hidden=true no_ignore=true<CR>', desc = 'Find All Files' },
