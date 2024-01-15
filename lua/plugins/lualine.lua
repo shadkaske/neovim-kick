@@ -45,9 +45,19 @@ return {
         },
         lualine_x = {
           {
-            require("util.lualine.components").lsp_active,
-            color = fg("Statement"),
-            cond = require("util.lualine.condition").hide_in_width,
+            function()
+              local reg = vim.fn.reg_recording()
+              if reg == '' then
+                return ''
+              end
+              return 'recording to @' .. reg
+            end,
+            color = fg 'Character',
+          },
+          {
+            require('util.lualine.components').lsp_active,
+            color = fg 'Statement',
+            cond = require('util.lualine.condition').hide_in_width,
           },
           {
             'diff',
