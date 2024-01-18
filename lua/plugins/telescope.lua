@@ -33,7 +33,7 @@ return {
     { '<leader>fh', ':Telescope help_tags<CR>', desc = 'Help' },
     { '<leader>fk', ':Telescope keymaps<cr>', desc = 'Keymaps' },
     { '<leader>fr', ':Telescope oldfiles<CR>', desc = 'Recent Files' },
-    { '<leader>fw', ':Telescope grep_string<CR>', mode="v", desc = 'Current Word' },
+    { '<leader>fw', ':Telescope grep_string<CR>', mode = 'v', desc = 'Current Word' },
     { '<leader>gC', ':Telescope git_bcommits<cr>', desc = 'Checkout commit(for current file)' },
     { '<leader>gb', ':Telescope git_branches<CR>', desc = 'Checkout Branch' },
     { '<leader>go', ':Telescope git_status<cr>', desc = 'Open changed file' },
