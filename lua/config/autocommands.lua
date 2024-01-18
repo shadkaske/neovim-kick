@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*" }, command = [[
 
 -- Turn of diagnostics for .env files
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
-  pattern = { ".env" },
+  pattern = { ".env", ".env.example" },
   command = [[lua vim.diagnostic.disable()]],
 })
 
