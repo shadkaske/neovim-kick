@@ -32,16 +32,21 @@ return {
               hint = icons.DiagnosticHint,
             },
           },
+          -- {
+          --   'filetype',
+          --   icon_only = true,
+          --   separator = '',
+          --   padding = {
+          --     left = 1,
+          --     right = 0,
+          --   },
+          -- },
+          -- { 'filename', path = 1, symbols = { modified = '  ', readonly = '', unnamed = '' } },
+          -- stylua: ignore
           {
-            'filetype',
-            icon_only = true,
-            separator = '',
-            padding = {
-              left = 1,
-              right = 0,
-            },
+            function() return require("nvim-navic").get_location() end,
+            cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
           },
-          { 'filename', path = 1, symbols = { modified = '  ', readonly = '', unnamed = '' } },
         },
         lualine_x = {
           {

@@ -17,6 +17,10 @@ return {
       leap = true,
       mason = true,
       mini = true,
+      navic = {
+        enabled = true,
+        custom_bg = "#181826",
+      },
       nvimtree = true,
       noice = true,
       notify = true,
