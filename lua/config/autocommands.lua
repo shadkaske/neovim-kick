@@ -18,6 +18,13 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
   command = [[lua vim.diagnostic.disable()]],
 })
 
+-- Run npm build on stupid vite vue projects
+vim.api.nvim_create_autocmd(
+  { "BufWritePost" },
+  { pattern = { "**/editracker/*/*.vue" },
+  command = [[!yarn run build &]],
+})
+
 -- Set Btxml Files to xml filetype
 vim.api.nvim_create_autocmd(
   { "BufWritePre", "BufNewFile" },
