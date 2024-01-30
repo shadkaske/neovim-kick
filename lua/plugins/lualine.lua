@@ -32,16 +32,24 @@ return {
               hint = icons.DiagnosticHint,
             },
           },
-          -- {
-          --   'filetype',
-          --   icon_only = true,
-          --   separator = '',
-          --   padding = {
-          --     left = 1,
-          --     right = 0,
-          --   },
-          -- },
-          -- { 'filename', path = 1, symbols = { modified = '  ', readonly = '', unnamed = '' } },
+          {
+            'filetype',
+            icon_only = true,
+            separator = '',
+            padding = {
+              left = 1,
+              right = 0,
+            },
+          },
+          {
+            'filename',
+            path = 1,
+            symbols = {
+              modified = '  ',
+              readonly = '',
+              unnamed = '',
+            },
+          },
           -- stylua: ignore
           {
             function() return require("nvim-navic").get_location() end,
