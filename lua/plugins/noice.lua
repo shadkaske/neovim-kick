@@ -21,9 +21,9 @@ return {
         ['cmp.entry.get_documentation'] = true,
       },
     },
-    presets = {
-      bottom_search = true,
-    },
+    -- presets = {
+    --   bottom_search = true,
+    -- },
     views = {
       cmdline_popup = {
         position = {
