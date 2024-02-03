@@ -129,7 +129,6 @@ return {
         { name = 'luasnip' },
         { name = 'path' },
         { name = 'orgmode' },
-        { name = 'cmdline' },
       },
     }
   end,
