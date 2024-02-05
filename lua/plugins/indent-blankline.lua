@@ -14,6 +14,7 @@ return {
       filetypes = {
         'dashboard',
         'alpha',
+        'org',
       },
     },
   },
