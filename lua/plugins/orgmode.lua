@@ -1,8 +1,7 @@
 return {
   'nvim-orgmode/orgmode',
-  lazy = false,
   dependencies = {
-    'nvim-treesitter/nvim-treesitter',
+    { 'nvim-treesitter/nvim-treesitter', lazy = true },
     'akinsho/org-bullets.nvim',
   },
   config = function()
