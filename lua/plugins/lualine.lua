@@ -6,8 +6,6 @@ return {
 
     local function fg(name)
       return function()
-        ---@type {foreground?:number}?
-        ---@diagnostic disable-next-line: undefined-field
         local hl = vim.api.nvim_get_hl_by_name(name, true)
         return hl and hl.foreground and { fg = string.format('#%06x', hl.foreground) }
       end
@@ -51,10 +49,10 @@ return {
             },
           },
           -- stylua: ignore
-          {
-            function() return require("nvim-navic").get_location() end,
-            cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-          },
+          -- {
+          --   function() return require("nvim-navic").get_location() end,
+          --   cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
+          -- },
         },
         lualine_x = {
           {
