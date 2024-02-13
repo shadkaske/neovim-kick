@@ -62,4 +62,5 @@ vim.o.completeopt = 'menuone,noselect'
 
 vim.o.termguicolors = true
 
-vim.cmd.colorscheme "catppuccin"
+-- vim.cmd.colorscheme "onedark"
+require('onedark').load()
