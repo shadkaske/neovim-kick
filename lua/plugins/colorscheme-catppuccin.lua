@@ -1,8 +1,4 @@
 return {
-  "navarasu/onedark.nvim",
-  opts = {
-    style = 'darker',
-  }
   -- "catppuccin/nvim",
   -- priority = 1000,
   -- name = "catppuccin",
