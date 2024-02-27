@@ -17,7 +17,6 @@ return {
     },
   },
   keys = {
-    { '<C-p>', ':Telescope find_files<CR>', desc = 'Telescope Find Files' },
     { '<C-g>', ':Telescope live_grep<CR>', desc = 'Telescope Live Grep' },
     { '<leader>bf', ':Telescope buffers<CR>', desc = 'Buffers' },
     { '<leader>cS', ':Telescope lsp_dynamic_workspace_symbols<cr>', desc = 'Workspace Symbols' },
