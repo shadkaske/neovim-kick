@@ -56,6 +56,9 @@ vim.keymap.set({ 'n' }, '<leader>br', '<cmd>e %<cr>', { desc = 'Reload Buffer' }
 vim.keymap.set({ 'n' }, '<leader>bn', '<cmd>bn<cr>', { desc = 'Next Buffer' })
 vim.keymap.set({ 'n' }, '<leader>bp', '<cmd>bp<cr>', { desc = 'Prev Buffer' })
 
+-- q Prefix
+vim.keymap.set({ 'n', 'v' }, '<leader>qq', '<cmd>cclose<cr>', { desc = 'Close QuickFix' })
+
 -- Buffer related
 vim.keymap.set('n', '<leader>ba', '<cmd>bufdo bd<cr>', { desc = 'Close All Buffers' })
 
