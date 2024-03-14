@@ -14,7 +14,7 @@ return {
         },
       },
     }
-    vim.cmd.colorscheme 'onedark_vivid'
-    require('lualine').setup { options = { theme = 'onedark_vivid' } }
+    -- vim.cmd.colorscheme 'onedark_vivid'
+    -- require('lualine').setup { options = { theme = 'onedark_vivid' } }
   end,
 }
