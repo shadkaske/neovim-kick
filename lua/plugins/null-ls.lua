@@ -14,7 +14,7 @@ return {
     require('null-ls').setup {
       debug = false,
       sources = {
-        formatting.prettier,
+        -- formatting.prettier,
         formatting.stylua,
         formatting.blade_formatter,
         formatting.sql_formatter,

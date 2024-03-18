@@ -98,7 +98,8 @@ return {
       options = {
         globalstatus = true,
         icons_enabled = true,
-        theme = 'auto',
+        theme = 'catppuccin',
+        -- theme = 'auto',
         component_separators = { left = '', right = '' },
         section_separators = { left = ' ', right = ' ' },
       },
