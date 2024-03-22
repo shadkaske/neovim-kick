@@ -4,6 +4,7 @@ return {
   name = "catppuccin",
   opts = {
     flavor = "mocha",
+    transparent_background = true,
     integrations = {
       aerial = true,
       cmp = true,
