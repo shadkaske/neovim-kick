@@ -11,6 +11,11 @@ vim.opt.cursorline = true
 
 vim.opt.hidden = true
 
+vim.opt_global.cmdheight = 0
+
+-- Set a default NotifyBackground hlgroup for notify to stop bitching
+vim.cmd [[ hi NotifyBackground guibg = #000000 ]]
+
 -- Set Scrolloff
 vim.opt.scrolloff = 4
 
@@ -61,4 +66,3 @@ vim.o.timeoutlen = 100
 vim.o.completeopt = 'menuone,noselect'
 
 vim.o.termguicolors = true
-
